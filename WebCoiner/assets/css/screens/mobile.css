@@ -1,0 +1,266 @@
+@media screen and (max-width:425px){
+	.mob-hide{
+		display: none !important;
+	}
+	
+	.mob-block{
+		display: block !important;
+	}
+
+	.section-heading {
+		font-size: 30px;
+	}
+
+	.feedback-form{
+		padding: 0 15px;
+	}
+
+	.footer-form-heading {
+		margin-top: 0;
+		font-size: 27px;
+		line-height: 28px;
+		font-weight: bold;
+	}
+
+	.feedback-form .messenger-picker-heading {
+		margin-top: 20px;
+		margin-bottom: 15px;
+		font-size: 14px;
+	}
+
+	.thx-slogan {
+		margin-bottom: 35px;
+		font-size: 50px;
+	}
+
+	.thx-promise {
+		margin-bottom: 43px;
+		font-size: 22px;
+	}
+
+	header{
+		position: fixed;
+		padding-top: 20px;
+	}
+
+	nav{
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	nav a span{
+		font-size: 18px;
+	}
+
+	nav a + a{
+		margin-top: 15px;
+	}
+
+	#mob-menu #header-button{
+		position: absolute;
+		top: 15px;
+		left: 15px;
+	}
+
+	.popup-close{
+		position: absolute;
+		top: 20px;
+		right: 15px;
+	}
+
+	.screen-section{
+		padding: 50px 0;
+	}
+
+    #top-section h1 {
+        margin-bottom: 40px;
+		font-size: 80px;
+		line-height: 80px;
+	}
+	
+	#top-section .top-section-slogan{
+		font-size: 32px;
+	}
+
+    .section-text-wrapper p{
+        line-height: 1.5;
+        font-size: 16px;
+    }
+
+    .button-small {
+        font-size: 16px;
+        min-width: 160px;
+        height: 35px;
+    }
+
+    .section-text-wrapper .section-heading{
+        margin-bottom: 40px;
+    }
+
+    .what-is-wrapper img {
+        position: static;
+        width: 100%;
+        margin: 0 auto 55px;
+        transform: none;
+    }
+
+    .section-text-wrapper{
+        text-align: center;
+    }
+
+    .section-text-wrapper p{
+        max-width: 95%;
+		margin: 0 auto;
+    }
+
+    .section-text-wrapper .buttons-inline {
+		margin-top: 50px;
+		flex-flow: column nowrap;
+        justify-content: center;
+	}
+	
+	.buttons-inline .button + .button {
+		margin-top: 25px;
+		margin-left: 0;
+	}
+
+    .asis-tobe-carousel{
+		margin: 45px 0;
+	}
+	
+	.asis-tobe-carousel-slide{
+		position: static;
+		width: 100%;
+		padding: 0 15px;
+		height: auto;
+		box-shadow: none;
+		opacity: 1;
+	}
+
+	.asis-tobe-carousel-slide + .asis-tobe-carousel-slide {
+		margin-top: 45px;
+	}
+
+	.asis-tobe-carousel-slide.active{
+		z-index: 1;
+	}
+
+    .asis-tobe-carousel-slide-title{
+        margin-bottom: 45px;
+    }
+
+    .asis-tobe-carousel-slide-content{
+        min-height: 1px;
+	}
+
+	.asis-tobe-carousel-controls-wrapper{
+		display: none;
+	}
+	
+    .ecosystem-scheme {
+        margin: 65px 0;
+    }
+
+    .enod-technicals-wrapper {
+        margin-top: 15px;
+	}
+
+	.enod-technicals-wrapper .row + .row .enod-technicals-badges-wrapper{
+		border: 1px dashed #b4b4b4;
+	}
+	
+	.enod-technicals-heading{
+		justify-content: center;
+		margin-bottom: 25px;
+	}
+
+    .enod-technicals-badge {
+		margin-top: 15px;
+        height: 60px;
+	}
+
+	.enod-technicals-badges-wrapper{
+		max-width: 260px;
+		margin: 0 auto 25px;
+	}
+
+	.enod-technicals-badges-wrapper .row{
+		flex-flow: column nowrap;
+	}
+
+	.enod-technicals-badges-wrapper .col-sm-1-5{
+		width: 100%;
+	}
+
+    .enod-technicals-badge span {
+        font-size: 14px;
+	    max-width: 90%;
+    }
+
+    #roadmap-section .section-heading{
+        margin-bottom: 65px;
+    }
+
+    .roadmap-wrapper{
+        align-items: center;
+    }
+
+    .roadmap-list {
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .roadmap-list-item {
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .roadmap-list-item + .roadmap-list-item{
+        margin-top: 15px;
+    }
+
+    .roadmap-list-item-dot-horizontal {
+		max-width: 120px;
+		margin-top: 0;
+		margin-right: 20px;
+		margin-left: -35px;
+    }
+
+    .roadmap-list-item-text{
+        font-size: 14px;
+    }
+
+    .roadmap-list-item-text {
+        height: auto;
+        width: auto;
+        transform: none; 
+        writing-mode: unset;
+    }
+
+    .roadmap-image-wrapper {
+        display: none;
+    }
+
+    .roadmap-image{
+        width: 100%;
+        height: auto;
+	}
+	
+	.enod-usage-item,
+	.team-person{
+		margin: 30px auto 0;
+		max-width: 290px;
+	}
+
+	footer{
+		padding: 45px 0;
+	}
+
+	footer nav{
+		display: none;
+	}
+
+}

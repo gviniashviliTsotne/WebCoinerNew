@@ -1,0 +1,242 @@
+﻿@{
+    string controllerName = Request.CurrentExecutionFilePath;
+}
+
+@*@model WebCoiner.Models.IndexViewModel
+@{
+	ViewBag.Title = "Manage";
+	var user = Model.AspNetUser.UserName;
+}*@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <title>cibholdings</title>
+
+
+    <!-- Crypto Admin skins -->
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="~/assets/admin/assets/vendor_components/bootstrap/dist/css/bootstrap.css">
+
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="~/assets/admin/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css">
+
+    <link rel="stylesheet" href="~/assets/admin/css/skin_color.css">
+
+
+    <!--amcharts -->
+    <link href="https://www.amcharts.com/lib/3/plugins/export/export.css" rel="stylesheet" type="text/css" />
+
+    <!-- Data Table-->
+    <link rel="stylesheet" type="text/css" href="~/assets/admin/assets/vendor_components/datatable/datatables.min.css" />
+
+    <!-- theme style -->
+    <link rel="stylesheet" href="~/assets/admin/css/horizontal-menu.css">
+    <link rel="stylesheet" href="~/assets/admin/css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="~/Content/ico/vendor.bundle.css" id="layoutstyle">
+    <link rel="stylesheet" href="~/Content/ico/style.css">
+    <link href="~/assets/admin/source/extractcssone.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/assets/login/vendor.bundle.css">
+    <link rel="stylesheet" href="~/assets/login/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/font-proxima-nova@1.0.1/index.min.js"></script>
+
+    <!--<base href="/">-->
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    @*<script src="~/Content/jquery-1.12.4.min.js"></script>*@
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+
+<body class="no-touch layout-top-nav dark-skin theme-classic">
+    <app-root>
+        <div>
+                   <header class="main-header" style="background-color: #1a233a"> 
+              <div class="inside-header">
+             <div class="d-flex align-items-center logo-box justify-content-between">
+            <a href="@Url.Action("Dashboard", "UserDashboard")" class="logo">
+                <div class="logo-lg">
+                     <span class="navbar-brand">  CIBHOLDINGS  </span> 
+                </div>
+            </a>
+        </div> 
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" style="background-color: #1a233a">
+                <!-- Sidebar toggle button-->
+                <ul id="main-menu" class="sm sm-blue d-flex justify-content-around">
+                    @if (User.IsInRole("administrator"))
+                    {
+                        <li>
+                            <a href="~/dashboard/list/">
+                                <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/transactions/list">
+                                <i class="icon-Equalizer"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>Transactions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/users/list"><i class="icon-Group"><span class="path1"></span><span class="path2"></span></i>Users</a>
+                        </li>
+                        <li>
+                            <a href="~/promocodes/list"><i class="icon-Arrows-h"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>Promocodes</a>
+                        </li>
+                        <li>
+                            <a href="~/manage/index/"><i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>Profile</a>
+                        </li>
+                        <li>
+                            <a href="~/userdashboard/create/">
+                                <i class="icon-Dollar">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span><span class="path3"></span><span class="path4"></span>
+                                </i>Buy Tokens
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="modalShow"><i class="icon-Box"><span class="path1"></span><span class="path2"></span></i>Packages</a>
+                        </li>
+                    }
+
+                    else if (Request.IsAuthenticated)
+                    {
+                        <li>
+                            <a href="~/userdashboard/dashboard/">
+                                <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/userdashboard/list/"><i class="icon-Equalizer"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>Transactions</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon-Chart-pie"><span class="path1"></span><span class="path2"></span></i>ICO</a>
+                        </li>
+                        <li><a href="currency_exchange.html"><i class="icon-Repeat"><span class="path1"></span><span class="path2"></span></i>Currency</a></li>
+                        <li>
+                            <a href="~/users/list"><i class="icon-Group"><span class="path1"></span><span class="path2"></span></i>Users</a>
+                        </li>
+                        <li>
+                            <a href="~/promocodes/list"><i class="icon-Arrows-h"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>Promocodes</a>
+                        </li>
+                        <li>
+                            <a href="~/manage/index/"><i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>Profile</a>
+                        </li>
+                        <li>
+                            <a href="~/userdashboard/create/"><i class="icon-Flower"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>Buy Tokens</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon-Bucket"><span class="path1"></span><span class="path2"></span></i>UI</a>
+                        </li>
+                    }
+                    <li class="d-flex align-items-center">
+                        @if (Request.IsAuthenticated)
+                        {
+                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <a class="d-flex" href="javascript:document.getElementById('logoutForm').submit()">
+                                    <i class="fa fa-cog fa-spin"></i>
+                                    <div>Log Out</div>
+                                </a>
+                            }
+                        }
+                    </li>
+                </ul>
+
+                @*<div class="navbar-custom-menu r-side">
+                <ul class="nav navbar-nav">
+
+
+
+                </ul>
+            </div>*@
+            </nav>
+                </div>  
+             </header> 
+
+            <!-- .navbar -->
+        </div><!-- .topbar-wrap -->
+        <app-profile>
+            @RenderBody()
+        </app-profile>
+    </app-root>
+
+    @RenderSection("scripts", required: false)
+
+    <script src="~/assets/admin/js/script.js?ver=104"></script>
+    <script>
+
+        // Active page menu when click
+        var CurURL = window.location.href, urlSplit = CurURL.split("#");
+        var $nav_link = $("a");
+        if ($nav_link.length > 0) {
+            $nav_link.each(function () {
+                if (CurURL === (this.href) && (urlSplit[1] !== "")) {
+                    $(this).closest("li").addClass("active").parent().closest("li").addClass("active");
+                }
+            });
+        }
+
+        //// Set the date we're counting down to
+        //var countDownDate = new Date("jan 01, 2022 00:00:00").getTime();
+
+        //// Update the count down every 1 second
+        //var x = setInterval(function () {
+
+        //    // Get todays date and time
+        //    var now = new Date().getTime();
+
+        //    // Find the distance between now and the count down date
+        //    var distance = countDownDate - now;
+
+        //     //Time calculations for days, hours, minutes and seconds
+        //    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        //    $('.countdown-time-first').html(days);
+        //    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        //    $('.countdown-time-second').html(hours);
+        //    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        //    $('.countdown-time-third').html(minutes);
+        //    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        //    $('.countdown-time-last').html(seconds);
+        //}, 1000);
+    </script>
+    <script type="text/javascript">
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+
+        function redirectBack() {
+            var url = '@Url.Action("Dashboard", "UserDashboard")';
+            window.location.href = url;
+        };
+
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

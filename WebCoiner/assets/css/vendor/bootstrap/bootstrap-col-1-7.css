@@ -1,0 +1,29 @@
+/*@media (min-width: 768px){
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1  {
+    width: 100%;
+    *width: 100%;
+  }
+}*/
+
+.col-sm-1-7,
+.col-md-1-7,
+.col-lg-1-7 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+@media (min-width: 768px) 
+{
+  .col-md-1-7,
+  .col-sm-1-7,
+  .col-lg-1-7 {
+    float: left;
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+}
+

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebCoiner.Transaction>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+    <section id="home_section" class="section_banner section_gradiant3">
+       
+       
+        <div class="container animation animated fadeInUp">
+
+            <p>
+                @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-white btn-radius create_btn" })
+            </p>
+            <table class="table table-light">
+                <tr>
+                    <th>
+                        Date Created
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tokens)
+                    </th>
+                    <th>
+                     $
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AspNetUser.Email)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.DateCreated.ToShortDateString()
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tokens)
+                        </td>
+                        <td>
+                            @item.BTC.ToString("0.##")
+                        </td>
+                        <td>
+                            @{ if (item.Approved == 0)
+                                { <span class="badge badge-pill badge-warning">Pending</span>}
+                                else if (item.Approved == 1)
+                                { <span class="badge badge-pill badge-danger">Rejected</span>}
+                                else if (item.Approved == 2)
+                                { <span class="badge badge-pill badge-success">Approved</span>}
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "edit", new { id = item.Id }) |
+                            @*@Html.ActionLink("Details", "details", new { id = item.Id }) |*@
+                            @Html.ActionLink("Delete", "delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </section>

@@ -1,0 +1,41 @@
+﻿@model WebCoiner.PromoCode
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+    <section id="home_section" class="section_banner section_gradiant3">
+       
+       
+        <div class="container animation animated fadeInUp">
+
+            <h3>Are you sure you want to delete this?</h3>
+            <div>
+                <hr />
+
+                <div class="container_white ">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            PromoCode
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PromoCode1)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-danger" /> |
+                            @Html.ActionLink("Back to List", "list", null, new { @class = "btn-link" })
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </section>

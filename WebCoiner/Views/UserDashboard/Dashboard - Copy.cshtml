@@ -1,0 +1,587 @@
+﻿@model WebCoiner.Models.Dashboard
+
+@{
+    ViewBag.Title = "Dashboard";
+    double raised = ((double)Model.Raised / 90000000) * 100;
+    var mil = Model.Raised / 1000000;
+    string controllerName = Request.CurrentExecutionFilePath;
+}
+
+
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bitreal</title>
+    <link rel="stylesheet" href="~/assets/admin/source/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="~/assets/admin/source/extractcssone.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/font-proxima-nova@1.0.1/index.min.js"></script>
+    <link rel="stylesheet" href="~/assets/admin/source/vendor.css">
+    <link rel="stylesheet" href="~/assets/admin/source/style.css">
+    <link rel="stylesheet" href="~/assets/admin/source/main.css">
+    <link rel="shortcut icon" href="~/assets/images/favicon.png" type="image/x-icon">
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1007.0" data-gr-ext-installed="">
+    <app-dashboard _nghost-c3="">
+        <div id="MainGlobal">
+            <div>
+                <div class="HeaderAllOut">
+                    <div class="StandartAllBlack StandartUnVisible"></div>
+                    <div class="VerificationBlockOut ChangePasswordInputBlockOut StandartUnVisible">
+                        <div class="closeModal">×</div>
+                        <div class="VerificationBlock ChangePasswordInputBlock">
+                            <div class="VerificationBlockTitle">Enter your password for access</div>
+                            <div class="ChangePasswordInputBlockIn">
+                                <input class="ChangePasswordInput" type="password"
+                                       name="passwordOld" placeholder="Old password" value=""><input class="ChangePasswordInput" type="password" name="password" placeholder="New password" value="">
+                                <input class="ChangePasswordInput" type="password" name="passwordConfirm" placeholder="Confirm new password" value="">
+                            </div>
+                            <div class="passwordMessage"></div>
+                            <div class="VerificationBlockButtons">
+                                <div class="ButtonRed">DECLINE</div><a href="">
+                                    <div class="ButtonGreen">
+                                        <nobr>ACCEPT</nobr>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="HeaderAll">
+                        <div class="HeaderAllTopTitle">
+                            <img src="~/assets/admin/source/dce7dc2cde60051297c33af4ccf33715.svg">
+                        </div>
+                        <div class="HeaderAllMainInfoOut">
+                            <div class="HeaderAllMainInfo">
+                                <div class="HeaderAllMainInfoImg">
+                                    <a href="@Url.Action("Dashboard", "UserDashboard")">
+                                        <img src="~/assets/images/favicon.png" width="180px">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="HeaderAllMainMenuOut">
+                            <div class="HeaderAllMainMenu">
+                                @if (User.IsInRole("administrator"))
+                                {
+                                    <div class="@{if (controllerName.ToLower().Contains("/dashboard/list"))
+                                                {@Html.Raw("active") } }">
+                                        <a href="~/dashboard/list/">
+                                            <div class="HeaderAllMainMenuElement">
+                                                <div class="HeaderAllMainMenuElementImg HeaderAllMainMenuElementImg05"></div>
+                                                <div class="HeaderAllMainMenuElementText">DASHBOARD</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="@{if (controllerName.ToLower().Contains("/transactions/list"))
+                                                {@Html.Raw("active") } }">
+                                        <a class="HeaderAllMainMenuActiveLink" aria-current="page" href="~/transactions/list">
+                                            <div class="HeaderAllMainMenuElement">
+                                                <div class="HeaderAllMainMenuElementImg HeaderAllMainMenuElementImg01"></div>
+                                                <div class="HeaderAllMainMenuElementText">TRANSACTIONS</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="@{if (controllerName.ToLower().Contains("/users/list"))
+                                                {@Html.Raw("active") } }">
+                                        <a href="~/users/list">
+                                            <div class="HeaderAllMainMenuElement">
+                                                <div class="HeaderAllMainMenuElementImg HeaderAllMainMenuElementImg02"></div>
+                                                <div class="HeaderAllMainMenuElementText">USERS</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="@{if (controllerName.ToLower().Contains("/promocodes/list"))
+                                                {@Html.Raw("active") } }">
+                                        <a href="~/promocodes/list">
+                                            <div class="HeaderAllMainMenuElement">
+                                                <div class="HeaderAllMainMenuElementImg HeaderAllMainMenuElementImg03"></div>
+                                                <div class="HeaderAllMainMenuElementText">PROMOCODES</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="@{if (controllerName.ToLower().Contains("manage/"))
+                                                {@Html.Raw("active") } }">
+                                        <a href="~/manage/index/">
+                                            <div class="HeaderAllMainMenuElement">
+                                                <div class="HeaderAllMainMenuElementImg HeaderAllMainMenuElementImgNEWS"></div>
+                                                <div class="HeaderAllMainMenuElementText">PROFILE</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="@{if (controllerName.ToLower().Contains("/userdashboard/create"))
+                                                {@Html.Raw("active") } }">
+                                        <a href="~/userdashboard/create/">
+                                            <div class="HeaderAllMainMenuElement">
+                                                <div class="HeaderAllMainMenuElementImg HeaderAllMainMenuElementImg07"></div>
+                                                <div class="HeaderAllMainMenuElementText">BUY TOKENS</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                                else if (Request.IsAuthenticated)
+                                {
+                                    <div class="@{if (controllerName.ToLower().Contains("userdashboard/dashboard/"))
+                                                {@Html.Raw("active") } }">
+
+                                        <a href="~/userdashboard/dashboard/">
+                                            <div class="HeaderAllMainMenuElement">
+                                                <div class="HeaderAllMainMenuElementImg HeaderAllMainMenuElementImg05"></div>
+                                                <div class="HeaderAllMainMenuElementText">DASHBOARD</div>
+                                            </div>
+                                        </a>
+
+                                    </div>
+                                    <div class="@{if (controllerName.ToLower().Contains("userdashboard/create"))
+                                                {@Html.Raw("active") } }">
+                                        <a href="~/userdashboard/create/">
+                                            <div class="HeaderAllMainMenuElement">
+                                                <div class="HeaderAllMainMenuElementImg HeaderAllMainMenuElementImg07"></div>
+                                                <div class="HeaderAllMainMenuElementText">BUY TOKENS</div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+                                    <div class="@{if (controllerName.ToLower().Contains("userdashboard/list"))
+                                                {@Html.Raw("active") } }">
+                                        <a href="~/userdashboard/list/">
+                                            <div class="HeaderAllMainMenuElement">
+                                                <div class="HeaderAllMainMenuElementImg HeaderAllMainMenuElementImg07"></div>
+                                                <div class="HeaderAllMainMenuElementText">TRANSACTIONS</div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="@{if (controllerName.ToLower().Contains("manage/"))
+                                                {@Html.Raw("active") } }">
+                                        <a href="~/manage/index/">
+                                            <div class="HeaderAllMainMenuElement">
+                                                <div class="HeaderAllMainMenuElementImg HeaderAllMainMenuElementImg07"></div>
+                                                <div class="HeaderAllMainMenuElementText">PROFILE</div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+                                }
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center" id="wrapper">
+                            @if (Request.IsAuthenticated)
+                            {
+                                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <div class="SignOut">
+                                        <div class="LogOutButton"><a href="javascript:document.getElementById('logoutForm').submit()" style="color: #fff">LOGOUT</a></div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                        @*<form action="/Account/LogOff" class="" id="logoutForm" method="post">
+                                <div class="SignOut">
+                                    <div class="LogOutButton"><a href="javascript:document.getElementById('logoutForm').submit()">LOGOUT</a></div>
+                                </div>
+                            </form>*@
+                        @*<div class="SignOut">
+                                <div class="LogOutButton"><a href="javascript:document.getElementById('logoutForm').submit()">LOGOUT</a></div>
+                            </div>*@
+                    </div>
+                </div>
+                <div class="Modal" style="display: none;">
+                    <div class="Modal-dialog" style="max-width: 800px;">
+                        <div class="Modal-content">
+                            <div class="Modal-header">
+                                <div class="closeModal" style="right: -15px;">×</div>ARNO Token FAQ
+                            </div>
+                            <div class="Modal-body">
+                                <div>
+                                    <iframe src="~/assets/admin/source/faq.html" width="100%"
+                                            style="min-height: 80vh; border: none;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Modal" style="display: none;">
+                    <div class="Modal-dialog" style="max-width: 520px;">
+                        <div class="Modal-content">
+                            <div class="Modal-header">
+                                <div class="closeModal" style="right: -15px;">×</div>ARNO Token Support Center
+                            </div>
+                            <div class="Modal-body">
+                                <div><iframe src="~/assets/admin/source/phMailer.html" width="100%" height="480px"></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="IndexMain ">
+                <div class="TopPafeInfo">
+                    <div class="TopPafeInfoElement">
+                        <div class="TopPafeInfoElementIn" style="color: #78c189">
+                            <div class="TopPafeInfoElementImg">
+                                <img src="~/assets/images/favicon.png" width="100">
+                            </div>
+                            @*<div class="TopPafeInfoElementText">SYSP</div>*@
+                            <div class="TopPafeInfoElementMoney">@Model.Tokens</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="IndexMainMainPart">
+                    <div class="IndexMainPackage">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <div class="package-area">
+                                    <div class="package-ttl"></div>
+                                    <div class="package-img">
+                                        <img src="~/assets/admin/source/investment.svg">
+                                    </div>
+                                    <div class="PaymentCoin PaymentCoin-style mb-2">Your investment amount: $<br>@Model.InvestmentAmount.ToString("#,##0")</div>
+                                    <button id="PayButton" style="display: none;">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <div class="package-area">
+                                    <div class="package-ttl"></div>
+                                    <div class="package-img">
+                                        <img src="~/assets/admin/source/balance.svg">
+                                    </div>
+                                    <div class="PaymentCoin PaymentCoin-style mb-2">Your current balance: $<br>@Model.CurrentBalance.ToString("#,##0")</div>
+
+
+                                    <div style="display: none;">
+                                        <button id="PayButtonPayPal2" class="ButtonStandart">
+                                            Make
+                                            deposit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <div class="package-area">
+                                    <div class="package-ttl"></div>
+                                    <div class="package-img">
+                                        <img src="~/assets/admin/source/profit.svg">
+                                    </div>
+                                    <div class="PaymentCoin PaymentCoin-style">Your profit:$ <br>@((Model.CurrentBalance - Model.InvestmentAmount).ToString("#,##0"))</div>
+
+                                    <div style="display: none;">
+                                        <button id="PayButtonPayPal3" class="ButtonStandart">
+                                            Make
+                                            deposit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="IndexMainExchenge">
+                        <div class="IndexMainUserBalancesGrid MainExchangeStyle">
+                            <div class="ico-area">
+                                <div class="row">
+                                    <div class="col-md-12 d-flex" style="justify-content: center;">
+                                        <div class="package-area" id="package-area">
+                                            <div class="package-img">
+                                                <img src="~/assets/admin/source/packoff.png">
+                                            </div>
+                                            <div class="package-ttl">PACKAGES</div>
+                                            <div>Choose your</div>
+                                            <div>Packages here...</div>
+                                            <button id="PayButton" style="display: none;">
+                                            </button>
+                                            <div style="display: none;">
+                                                <button id="PayButtonPayPal" class="ButtonStandart">
+                                                    Make
+                                                    deposit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade show" id="myModal" style="display: none;" aria-modal="true" background-color:
+                         rgba(152, 152, 152, 0.8);>
+                        <div class="modal-dialog" style=" width: 90%; max-width: 1200px; min-height: 100%;">
+                            <div class="modal-content">
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <section class="lis-bg-light">
+                                        <div class="container">
+                                            <div class="row justify-content-center">
+                                                <div class="col-12 col-md-10 text-center">
+                                                    <div class="heading pb-4">
+                                                        <h2>Choose Your Package</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center"
+                                                     style="visibility: visible; animation-name: fadeInUp;">
+                                                    <div class="price-table">
+                                                        <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light">
+                                                            <h5 class="text-uppercase lis-latter-spacing-2">Basic</h5>
+                                                            <h1 class="display-4 lis-font-weight-500">1<small>%</small></h1>
+                                                            <p class="mb-0">Basic Membership</p>
+                                                        </div>
+                                                        <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                            <ul class="list-unstyled lis-line-height-3">
+                                                                <li>Bitreal tokens in portfolio</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center"
+                                                     style="visibility: visible; animation-name: fadeInUp;">
+                                                    <div class="price-table">
+                                                        <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light"
+                                                             style="background-color:#e6e4e2;">
+                                                            <h5 class="text-uppercase lis-latter-spacing-2">Silver</h5>
+                                                            <h1 class="display-4 lis-font-weight-500">
+                                                                1<small>%</small>-
+                                                                5<small>%</small>
+                                                            </h1>
+                                                            <p class="mb-0">Silver Membership</p>
+                                                        </div>
+                                                        <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                            <ul class="list-unstyled lis-line-height-3">
+                                                                <li>Bitreal tokens in portfolio</li>
+                                                                <li>Minimum portfolio: $100,000</li>
+                                                            </ul>
+                                                            <a href="/userdashboard/create/" style="background-color: #28c189;"
+                                                               class="btn btn-primary-outline btn-md lis-rounded-circle-50"
+                                                               data-abc="true">Top Up Now</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center"
+                                                     style="visibility: visible; animation-name: fadeInUp;">
+                                                    <div class="price-table">
+                                                        <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light"
+                                                             style="background-color:#F3AF4C;">
+                                                            <h5 class="text-uppercase lis-latter-spacing-2">Gold</h5>
+                                                            <h1 class="display-4 lis-font-weight-500">
+                                                                6<small>%</small> -
+                                                                12<small>%</small>
+                                                            </h1>
+                                                            <p class="mb-0">Gold Membership</p>
+                                                        </div>
+                                                        <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                            <ul class="list-unstyled lis-line-height-3">
+                                                                <li>Bitreal tokens in portfolio</li>
+                                                                <li>Minimum portfolio: $250,000</li>
+                                                            </ul>
+                                                            <a href="/userdashboard/create/" style="background-color: #28c189;"
+                                                               class="btn btn-primary-outline btn-md lis-rounded-circle-50"
+                                                               data-abc="true">Top Up Now</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center"
+                                                     style="visibility: visible; animation-name: fadeInUp;">
+                                                    <div class="price-table">
+                                                        <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light"
+                                                             style="        background-color:#a0b2c6;">
+
+                                                            <h5 class="text-uppercase lis-latter-spacing-2">Platinum</h5>
+                                                            <h1 class="display-4 lis-font-weight-500">
+                                                                12<small>%</small>-20<small>%</small>
+                                                            </h1>
+                                                            <p class="mb-0">Platinum Membership</p>
+                                                        </div>
+                                                        <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                            <ul class="list-unstyled lis-line-height-3">
+
+
+                                                                <li>Bitreal tokens in portfolio</li>
+                                                                <li>Minimum portfolio: $500,000</li>
+
+                                                            </ul>
+                                                            <a href="/userdashboard/create/" style="background-color: #28c189;"
+                                                               class="btn btn-primary-outline btn-md lis-rounded-circle-50"
+                                                               data-abc="true">Top Up Now</a>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" id="close-modal"
+                                            data-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="IndexMainQuickBar">
+                        <div class="IndexMainElementIn" style="margin-top: 20px">
+                            <div class="col-xl-8 col-lg-7 col-md-12 chart-cont">
+                                <div class="token-sale-graph card card-full-height" style="background-color:#ffffff;">
+                                    <div class="card-innr">
+                                        <div class="chart-tokensale">
+                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+                                            <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+                                            @if (Request.Browser.IsMobileDevice)
+                                            {
+                                                <canvas id="line-chart" width="800" height="450"></canvas>
+                                            }
+                                            else
+                                            {
+                                                <canvas id="line-chart" width="600" height="250"></canvas>
+                                            }
+
+                                            <script>
+                                                new Chart(document.getElementById("line-chart"), {
+                                                    type: 'line',
+                                                    data: {
+                                                        labels: ['Private Sale   $0.03', 'Presale $0.06', 'Softcap $0.15', 'Hardcap $0.30'],
+                                                        datasets: [{
+                                                            data: [0.03, 0.06, 0.15, 0.30],
+                                                            label: "Token Price",
+                                                            borderColor: "#3e95cd",
+                                                            fill: true
+                                                        },
+                                                        ]
+                                                    },
+                                                    options: {
+                                                        title: {
+                                                            display: true,
+                                                            text: 'CHART'
+                                                        }
+                                                    }
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="scrollup btn-default" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
+    </app-dashboard>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="~/assets/admin/source/admin.js"></script>
+    <!-- <script type="text/javascript" src="~/assets/admin/source/bundle.js"></script> -->
+    <style>
+        .tb_button {
+            padding: 1px;
+            cursor: pointer;
+            border-right: 1px solid #8b8b8b;
+            border-left: 1px solid #FFF;
+            border-bottom: 1px solid #fff;
+        }
+
+            .tb_button.hover {
+                border: 2px outset #def;
+                background-color: #f8f8f8 !important;
+            }
+
+        .ws_toolbar {
+            z-index: 100000
+        }
+
+            .ws_toolbar .ws_tb_btn {
+                cursor: pointer;
+                border: 1px solid #555;
+                padding: 3px
+            }
+
+        .tb_highlight {
+            background-color: yellow
+        }
+
+        .tb_hide {
+            visibility: hidden
+        }
+
+        .ws_toolbar img {
+            padding: 2px;
+            margin: 0px
+        }
+    </style>
+    @section Scripts {
+        <script>
+        var milion =@mil;
+
+        $("#btc-base-amount").on("keyup", function () {
+            var inputvalue = $(this).val()
+            values = inputvalue.replace('$', '').replace(',', '').replace('.', '');
+
+            //values = values * 12;
+
+            //TODO Raised from http://Bitreal-ico.com/dashboard/list/ ...
+            //var milion = 14;
+
+            if (milion < 15)
+                values = values * 10;
+            else if (milion > 15 && milion < 49)
+                values = values * 4;
+            else
+                values = values * 2;
+
+
+           // if (milion < 5)
+           //     values = values * 13;
+           //else if (milion < 40)
+           //     values = values * 7;
+           // else
+           //     values = values * 3.5;
+            //if (values < 10000)
+            //    values = values * 3.9;
+            //else if (values < 30000)
+            //    values = values * 5.5;
+            //else if (values < 60000)
+            //    values = values * 7.3;
+            //else if (values < 100000)
+            //    values = values * 9.6;
+            //else if (values < 250000)
+            //    values = values * 12.7;
+            //else
+            //    values = values * 19;
+
+            $("#token-base-amount").val(values);
+
+        })
+
+            document.addEventListener("DOMContentLoaded", function (event) {
+                $("#backbutton").hide();
+            });
+        </script>
+    }
+</body>
+
+</html>
+

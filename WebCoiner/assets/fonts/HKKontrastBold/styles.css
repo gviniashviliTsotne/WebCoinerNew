@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'HKKontrast';
+    font-style: normal;
+    font-weight: bold;
+    src: url('HKKontrastBold.eot');
+    src: url('HKKontrastBold.eot') format('embedded-opentype'),
+         url('HKKontrastBold.html') format('woff2'),
+         url('HKKontrastBold.woff') format('woff'),
+         url('HKKontrastBold.ttf') format('truetype'),
+         url('HKKontrastBold.svg#HKKontrastBold') format('svg');
+}

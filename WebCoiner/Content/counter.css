@@ -1,0 +1,391 @@
+﻿.token-sales .card-title-sm {
+    padding-top: 2px
+}
+
+.token-sales .sap {
+    margin: 4px 0 2px
+}
+.card {
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: none;
+    background: transparent;
+    transition: all .4s;
+    vertical-align: top
+}
+
+.card-shadow {
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.05)
+}
+
+    .card-shadow:hover {
+        box-shadow: 0px 15px 50px 0px rgba(0,0,0,0.09)
+    }
+
+.card-full-height {
+    height: calc(100% - 15px)
+}
+
+.card-gradient-pri-sec {
+    background-image: linear-gradient(45deg, #1c65c9 0%, #2c80ff 100%)
+}
+
+.card-innr {
+    padding: 16px 20px;
+    border-color: #e6effb !important
+}
+
+    .card-innr > .card-title {
+        padding-bottom: 10px
+    }
+
+    .card-innr > div:last-child:not(.input-item):not(.row):not(.step-head) {
+        margin-bottom: 5px
+    }
+
+.account-info .card-innr > div:last-child:not(.input-item):not(.row):not(.step-head) {
+    margin-bottom: 0
+}
+
+.card-innr-fix {
+    padding-bottom: 20px
+}
+
+.card-title {
+    color: #253992;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin: 0
+}
+
+.card-title-lg {
+    font-size: 1.6em
+}
+
+.card-title-md {
+    font-size: 1.3em
+}
+
+.card-title-sm {
+    font-size: 1.1em
+}
+
+.card-title:last-child {
+    margin-bottom: 0
+}
+
+.card-title-text {
+    width: 100%
+}
+
+    .card-title-text:not(:first-child) {
+        margin-top: 4px
+    }
+
+.card-title + .btn-grp {
+    margin-top: -5px
+}
+
+.card-sub-title {
+    text-transform: uppercase;
+    color: #758698;
+    letter-spacing: 0.1em;
+    display: block;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    margin-bottom: 4px
+}
+
+.card-head {
+    padding-bottom: 18px
+}
+
+    .card-head.has-aside {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center
+    }
+
+    .card-head:last-child {
+        padding-bottom: 0
+    }
+
+.card-opt {
+    position: relative
+}
+
+.card-footer {
+    background: #f6f8fc
+}
+
+.card .content:not(:first-child) {
+    margin-top: 10px
+}
+
+.card-token {
+    /*    background-image: linear-gradient(45deg, #1c65c9 0%, #2c80ff 100%);*/
+    color: #fff;
+    background-color: #394452;
+}
+
+    .card-token .card-sub-title {
+        color: #74fffa;
+        margin-bottom: 4px
+    }
+
+.card-calc .note p {
+    font-size: 11px !important
+}
+
+.card-text-light {
+    color: #fff
+}
+
+    .card-text-light .card-title, .card-text-light .card-sub-title {
+        color: #fff
+    }
+
+    .card-text-light .card-opt > a {
+        color: #fff !important
+    }
+
+        .card-text-light .card-opt > a:after {
+            border-top-color: #fff
+        }
+
+    .card-text-light p {
+        color: #fff
+    }
+
+.card-dark {
+    background: #090d1c
+}
+
+.card-primary {
+    background: #2c80ff
+}
+
+.card-secondary {
+    background: #253992
+}
+
+.card-success {
+    background: #00d285
+}
+
+.card-warning {
+    background: #ffc100
+}
+
+.card-info {
+    background: #1babfe
+}
+
+.card-danger {
+    background: #ff6868
+}
+
+.card-navs .card-innr {
+    padding-top: 14px;
+    padding-bottom: 14px
+}
+
+.card-timeline .card-innr {
+    height: calc(100% - 32px)
+}
+
+@media (min-width: 410px) {
+    .card-token .token-balance-list li {
+        min-width: 25%
+    }
+}
+
+@media (min-width: 576px) {
+    .card {
+        margin-bottom: 30px
+    }
+
+    .card-title {
+        font-size: 1.4em
+    }
+
+    .card-title-sm {
+        font-size: 1.1em;
+        padding-top: 2px
+    }
+
+    .card-innr {
+        padding: 25px 30px
+    }
+
+    .card-innr-fix {
+        padding-bottom: 30px
+    }
+
+    .card-innr-fix2 {
+        padding-bottom: 10px
+    }
+
+    .card-full-height {
+        height: calc(100% - 30px)
+    }
+
+    .card-timeline .card-innr {
+        height: calc(100% - 50px)
+    }
+}
+
+@media (min-width: 992px) {
+    .card-navs .card-innr {
+        padding-top: 25px;
+        padding-bottom: 25px
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .card-token .token-balance-list li {
+        min-width: 84px
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-token .token-balance-list li {
+        min-width: 33.33%
+    }
+}
+.progress-info {
+    display: contents;
+    justify-content: space-between
+}
+
+    .progress-info li {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #39b059;
+        line-height: 1.4;
+        /*        margin-bottom: 80px;*/
+    }
+
+        .progress-info li span {
+            color: #758698;
+            display: block;
+            font-size: 12px
+        }
+
+.progress-bar {
+    display: block;
+    color: #758698;
+    background: #318291;
+    height: 6px;
+    border-radius: 3px;
+    margin: 12px 0 65px;
+    position: relative;
+    top: 65px;
+    max-width: 550px;
+}
+
+.progress-hcap, .progress-scap, .progress-psale, .progress-percent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    border-radius: 3px
+}
+
+    .progress-hcap > div, .progress-scap > div, .progress-psale > div, .progress-percent > div {
+        position: absolute;
+        right: 0;
+        transform: translateX(50%);
+        width: 120px;
+        font-size: 10px;
+        line-height: 14px;
+        font-weight: 500;
+        padding: 25px 0 0 0;
+        text-transform: uppercase; 
+        top: -83px;
+    }
+
+        .progress-hcap > div:after, .progress-scap > div:after, .progress-psale > div:after, .progress-percent > div:after {
+            position: absolute;
+            top: 54px;
+            left: 50%;
+            margin-left: -2px;
+            width: 2px;
+            height: 20px;
+            content: '';
+            background: #39b159
+        }
+
+        .progress-hcap > div span, .progress-scap > div span, .progress-psale > div span, .progress-percent > div span {
+            display: block;
+            color: #495463
+        }
+
+.progress-hcap {
+    background: #fff
+}
+
+.progress-scap {
+    background: #fff
+}
+
+.progress-psale {
+    background: #39b159
+}
+
+.progress-percent {
+    background: #2c80ff
+}
+
+    .progress-percent:after {
+        position: absolute;
+        content: '';
+        right: 0;
+        top: 50%;
+        height: 18px;
+        width: 18px;
+        border: 3px solid #318291;
+        background: #fff;
+        border-radius: 50%;
+        transform: translate(50%, -50%)
+    }
+.countdown-clock {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -7px;
+    max-width: 320px
+}
+
+    .countdown-clock > div {
+        border-radius: 4px;
+        border: 1px solid #e6effb;
+        margin: 0 7px;
+        flex-grow: 1;
+        text-align: center;
+        padding: 10px 0
+    }
+
+.countdown-time {
+    font-size: 24px;
+    color: #495463;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.1em
+}
+
+.countdown-text {
+    display: block;
+    font-weight: 500;
+    font-size: 11px;
+    color: #758698;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1
+}
+
+.card-dark .countdown-text {
+    color: #b9d2f2
+}

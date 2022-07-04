@@ -1,0 +1,298 @@
+﻿@model WebCoiner.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage";
+}
+
+    <style>
+
+        
+/* Customize the label (the checkbox) */
+.checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    /* Hide the browser's default checkbox */
+    .checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+        
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+    </style>
+
+<div class="container animation animated fadeInUp">
+
+
+    <p class="text-success">@ViewBag.StatusMessage</p>
+    <div>
+        <h4>Change your account settings</h4>
+        <hr />
+        <div class="container_white ">
+            <dl class="dl-horizontal">
+                <dt>Password:</dt>
+                <dd>
+                    [
+                    @if (Model.HasPassword)
+                    {
+                        @Html.ActionLink("Change your password", "ChangePassword", null, new { @class = "btn-link" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Create", "SetPassword", null, new { @class = "btn-link" })
+                    }
+                    ]
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("edit", "manage"))
+    {
+        @Html.AntiForgeryToken()
+        <br />
+        <div class="form-horizontal">
+            <h4>User @Model.AspNetUser.UserName</h4>
+            <hr />
+            <div class="container_white ">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @*@Html.HiddenFor(model => model.AspNetUser.Id)*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AspNetUser.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AspNetUser.Email, new { htmlAttributes = new { @class = "form-control", disabled = "" } })
+                        @Html.ValidationMessageFor(model => model.AspNetUser.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.AspNetUser.EmailConfirmed, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.AspNetUser.EmailConfirmed)
+                                @Html.ValidationMessageFor(model => model.AspNetUser.EmailConfirmed, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AspNetUser.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AspNetUser.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AspNetUser.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AspNetUser.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AspNetUser.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AspNetUser.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.AspNetUser.PasswordHash, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.AspNetUser.PasswordHash, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AspNetUser.PasswordHash, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.AspNetUser.PromoCode, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.AspNetUser.PromoCode, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AspNetUser.PromoCode, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.AspNetUser.SecurityStamp, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.AspNetUser.SecurityStamp, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AspNetUser.SecurityStamp, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AspNetUser.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AspNetUser.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AspNetUser.PhoneNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.AspNetUser.PhoneNumberConfirmed, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.AspNetUser.PhoneNumberConfirmed)
+                                @Html.ValidationMessageFor(model => model.AspNetUser.PhoneNumberConfirmed, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>*@
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.AspNetUser.TwoFactorEnabled, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.AspNetUser.TwoFactorEnabled)
+                                @Html.ValidationMessageFor(model => model.AspNetUser.TwoFactorEnabled, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>*@
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.AspNetUser.LockoutEndDateUtc, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.AspNetUser.LockoutEndDateUtc, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AspNetUser.LockoutEndDateUtc, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.AspNetUser.LockoutEnabled, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.AspNetUser.LockoutEnabled)
+                                @Html.ValidationMessageFor(model => model.AspNetUser.LockoutEnabled, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>*@
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.AspNetUser.AccessFailedCount, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.AspNetUser.AccessFailedCount, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AspNetUser.AccessFailedCount, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.AspNetUser.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.AspNetUser.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AspNetUser.UserName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                *@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AspNetUser.Wallet, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AspNetUser.Wallet, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AspNetUser.Wallet, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AspNetUser.AddressToken, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AspNetUser.AddressToken, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AspNetUser.AddressToken, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label class="checkbox">
+                            @Html.ValidationMessageFor(model => model.AspNetUser.NotificationResumptionSales, "", new { @class = "text-danger" })
+                            <label class="control-label col-md-4" for="AspNetUser_NotificationResumptionSales">Notification Resumption Sales</label>
+                            @Html.EditorFor(model => model.AspNetUser.NotificationResumptionSales, new { htmlAttributes = new { @class = "checkbox" } })
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label class="checkbox">
+                            @Html.ValidationMessageFor(model => model.AspNetUser.NotificationLatesNews, "", new { @class = "text-danger" })
+                            <label class="control-label col-md-4" for="AspNetUser_NotificationLatesNews">Notification Latest News</label>
+                            @Html.EditorFor(model => model.AspNetUser.NotificationLatesNews, new { htmlAttributes = new { @class = "checkbox" } })
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label class="checkbox">
+                            @Html.ValidationMessageFor(model => model.AspNetUser.NotificationUnusualActivity, "", new { @class = "text-danger" })
+                            <label class="control-label col-md-4" for="AspNetUser_NotificationUnusualActivity">Notification Unusual Activity</label>
+                            @Html.EditorFor(model => model.AspNetUser.NotificationUnusualActivity, new { htmlAttributes = new { @class = "checkbox" } })
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

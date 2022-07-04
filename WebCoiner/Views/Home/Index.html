@@ -1,0 +1,959 @@
+﻿@{
+    @model WebCoiner.GlobalDashboardList
+
+    //decimal currentpercentage = 23;
+
+    double raised = ((double)Model.Raised / 75000000) * 100;
+
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>VERBAX ICO</title>
+    <meta name="description" content="Decentralized web reputation and ad benchmarking ecosystem.">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="assets/style.css">
+
+    <script type="text/javascript" src="assets/js/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/aos/aos.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/particles.min.js"></script>
+    <script type="text/javascript" src="assets/js/form-validation.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+</head>
+<body class="global-wrapper">
+    <div id="mob-menu" class="popup-section">
+        <img class="section-background" src="assets/images/ecosystem-section-background.jpg">
+        <div class="popup-close">
+            <img src="assets/images/menu-burger-close.png">
+        </div>
+        <a href="/account/login" id="header-button" class="button button-round button-small  button-green">
+            <span>Log in</span>
+        </a>
+        <div class="popup-content">
+            <div class="container">
+                <div class="row row-eq-height">
+                    <div class="col-sm-12 text-center">
+                        <nav class="navigation">
+                            <a href="#top-section"><span>Main</span></a>
+                            <a href="#what-is-section"><span>What is?</span></a>
+                            <a href="#ecosystem-section"><span>Ecosystem</span></a>
+                            <a href="#technicals-section"><span>Technicals</span></a>
+                            <a href="#usage-section"><span>Usage</span></a>
+                            <a href="#roadmap-section"><span>Roadmap</span></a>
+                            <a href="#team-section"><span>Team</span></a>
+                            <a href="#contacts-section"><span>Contacts</span></a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <header>
+        <div class="container">
+            <div class="row row-eq-height">
+                <div class="col-sm-8" style="background-color:#2a2d2f;border-radius: 50px; padding-right: 33px;    padding-left: 33px;">
+                    <nav class="navigation mob-hide">
+                        <a href="#top-section"><span>Home</span></a>
+                        <a href="#what-is-section"><span>What is?</span></a>
+                        <a href="#ecosystem-section"><span>Ecosystem</span></a>
+                        <a href="#technicals-section"><span>Technicals</span></a>
+                        <a href="#usage-section"><span>Usage</span></a>
+                        <a href="#roadmap-section"><span>Roadmap</span></a>
+                        <a href="#team-section"><span>Team</span></a>
+                        <!--  <a href="#contacts-section"><span>Contacts</span></a> -->
+                    </nav>
+                </div>
+
+                <div class="col-sm-2 text-right">
+                    <a href="/account/login" id="header-button" class="button button-round button-small  button-green ">
+                        <span>Log in</span>
+                    </a>
+
+                </div>
+                <div class="col-sm-2 text-left" style="margin-top:10px">
+                    <a href="/account/register" id="header-button">
+                        <span style="text-decoration:underline;color:#375a00">Sign up</span>
+                    </a>
+
+                    <div class="menu-burger mob-block pad-block">
+                        <img src="assets/images/menu-burger.png" class="menu-open">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="screen-section" id="top-section">
+            <div class="section-content">
+                <div class="container" style=" max-width: 1450px">
+                    <div class="row row-eq-height">
+                        <div class="col-sm-8">
+                            <h1 class="text-center" style="color:#2a2d2f">
+                                VERBAX
+                            </h1>
+                            <p class="top-section-slogan text-center" style="color:#2a2d2f">
+                                Decentralized <span style="color:#00a74a">web reputation</span> &nbsp; & <br>AD benchmarking ecosystem.
+                            </p>
+                            <div class="text-center">
+                                <a class="button button-big button-round button-yellow" id="learn-more" href="#what-is-section" style="background-color:#004e12">
+                                    <span>Learn more</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+
+                            <div id="cryptronick_ico_5c1a8e5c87801"
+                                 style="padding-left:30px; padding-right:30px; padding-top:30px; padding-bottom:30px; "
+                                 class="cryptronick_module_ico_progress">
+
+                                <div class="cryptronick_module_custom_text  " style="color:#ffffff; font-size:28px; line-height:140%;">
+                                    <p style="text-align: center; margin-bottom: 13px;">
+                                        <span style="font-weight: 300;"
+                                              class="cryptronick_font-weight">
+                                            WE &nbsp; LAUNCH   &nbsp; IN
+
+                                        </span>
+                                    </p>
+                                    <div id="ritekit-alerts"></div>
+                                    <div id="ritekit-alerts"></div>
+                                </div>
+                                <div class="countdown_wrapper">
+
+                                    <div id="countdown_5c1a8e5c8823c"
+                                         class="bpt-countdown countdown_size_custom countdown_align_center is-countdown" data-year="2019"
+                                         data-month="05" data-day="29" data-hours="01" data-min="00" data-label_years="Years"
+                                         data-label_months="Months" data-label_weeks="Weeks" data-label_days="Days" data-label_hours="Hours"
+                                         data-label_minutes="Minutes" data-label_seconds="Seconds" data-label_year="Year"
+                                         data-label_month="Month" data-label_week="Week" data-label_day="Day" data-label_hour="Hour"
+                                         data-label_minute="Minute" data-label_second="Second" data-format="dHMS"
+                                         style="color:#ffffff;font-size:45px;">
+                                        <span class="countdown-row countdown-show3">
+                                            <span class="countdown-section">
+                                                <span id="cu-days" style="color: #2c8fc6;padding: 0 13px;"
+                                                      class="countdown-amount">00</span><span class="countdown-period">Days</span>
+                                            </span>
+                                            <span class="countdown-section">
+                                                <span id="cu-hours" style="color: #2c8fc6"
+                                                      class="countdown-amount">00</span><span class="countdown-period">Hours</span>
+                                            </span>
+                                            <span class="countdown-section">
+                                                <span id="cu-minutes" style="color: #2c8fc6"
+                                                      class="countdown-amount">00</span><span class="countdown-period">Minutes</span>
+                                            </span><span class="countdown-section">
+                                                <span id="cu-seconds" style="color: #2c8fc6"
+                                                      class="countdown-amount">00</span><span class="countdown-period">Seconds</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+
+                                <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                                    <div class="wpb_column vc_column_container vc_col-sm-12">
+                                        <div class="vc_column-inner">
+                                            <div class="wpb_wrapper">
+                                                <div id="ico_progress_5c1a8e5c8a712" class="cryptronick_module_ico_progress"
+                                                     style="max-width: 340px;">
+                                                    <div class="progress_bar_wrap">
+                                                        <div class="progress_point" style="left:1%;">
+                                                            Private Sale
+                                                        </div>
+                                                        <div class="progress_point" style="left:46%;">
+                                                            Presale
+                                                        </div>
+                                                        <div class="progress_point" style="left:66%;">
+                                                            Softcap
+                                                        </div>
+                                                        <div class="progress_point" style="left:100%;">
+                                                            Hardcap
+                                                        </div>
+                                                        <div class="progress_completed" data-width="@raised" style="width: @raised%;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress_value_wrap">
+                                                        <div class="progress_value_completed">
+                                                            <span style="margin-left: 35px;"></span>
+                                                        </div>
+                                                        <div class="progress_value_completed">
+                                                            <span style="margin-left: 66px;">$35M</span>
+                                                        </div>
+                                                        <div class="progress_value_completed">
+                                                            <span style="margin-right: 21px;">$50M</span>
+                                                        </div>
+                                                        <div class="progress_value_max">
+                                                            <span>$75M</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <div class="progress_value_wrap">
+                                                        <div class="progress_value_completed" style="font-size: 21px;color:#2c8fc6">
+                                                            Raised:<span>  &nbsp; $@Model.Raised.ToString("#,##0") </span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="cryptronick_spacing ">
+                                                    <div class="cryptronick_spacing-height cryptronick_spacing-height_default"
+                                                         style="height:24px;"></div>
+                                                </div>
+                                                <div class="cryptronick_module_custom_text  "
+                                                     style="color:#ffffff; font-size:18px; line-height:140%;">
+                                                    <p style="text-align: center;">
+                                                        <span style="font-weight: 300;"
+                                                              class="cryptronick_font-weight">
+
+                                                        </span>
+                                                    </p>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen-section" id="what-is-section">
+            <div class="container">
+                <div class="row row-eq-height">
+                    <div class="col-sm-12 col-md-12 col-lg-5 what-is-wrapper">
+                        <img src="assets/images/what-is-enod.png" data-aos="fade-right" data-aos-delay="100" data-aos-duration="700">
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-1 offset-md-0">
+                        <div class="row">
+                            <div class="section-text-wrapper">
+                                <h2 class="section-heading">
+                                    What is VERBAX ICO?
+                                </h2>
+                                <p>
+                                    A decentralized reputation ecosystem that allows publishers to prove their integrity, advertisers -  to securely diversify advertising placements, and allow regular people to participate in improving the content on the Internet.
+                                </p>
+                                <div class="buttons-inline">
+                                    <a href="/Content/VERBAX whitepaper.pdf" target="_blank" id="whitepaper" class="button button-round button-big button-yellow" style="background-color:#004e12">
+                                        <span>Whitepaper</span>
+                                    </a>
+                                    <a href="/Content/VERBAX lightpaper.pdf" target="_blank" id="lightpaper" class="button button-round button-big button-red" style="background-color: #943a22;">
+                                        <span>Lightpaper</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="screen-section" id="asis-tobe-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h2 class="section-heading asis-tobe-heading mob-hide"><span>As is</span><img src="assets/images/as-is-to-be-arrow.png"><span>To be</span></h2>
+                    </div>
+                </div>
+                <div class="row row-eq-height">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="asis-tobe-carousel">
+                                <div class="asis-tobe-carousel-slide active" data-slide-index="1">
+
+                                    <div class="asis-tobe-carousel-slide-content text-center">
+                                        <img src="assets/images/scheme-as-is.png">
+                                    </div>
+                                </div>
+                                <div class="asis-tobe-carousel-slide" data-slide-index="2">
+                                    <p class="asis-tobe-carousel-slide-title section-heading">
+                                        To be
+                                    </p>
+                                    <div class="asis-tobe-carousel-slide-content text-center">
+                                        <img src="assets/images/scheme-to-be.png">
+                                    </div>
+                                </div>
+                                <div class="asis-tobe-carousel-controls-wrapper">
+                                    <div class="col-sm-10 offset-sm-1">
+                                        <div class="row">
+                                            <div class="asis-tobe-carousel-controls">
+                                                <a href="#" class="asis-tobe-carousel-control asis-tobe-carousel-control-left">
+                                                    <img src="assets/images/arrow-left.png" alt="previous">
+                                                </a>
+                                                <a href="#" class="asis-tobe-carousel-control asis-tobe-carousel-control-right">
+                                                    <img src="assets/images/arrow-right.png" alt="next">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="screen-section" id="ecosystem-section">
+            <img class="section-background" src="assets/images/ecosystem-section-background.jpg"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="section-heading">VERBAX Ecosystem</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-10 offset-lg-1">
+                        <img src="assets/images/scheme-ecosystem.png" class="img-fluid ecosystem-scheme" alt="VERBAX Ecosystem Scheme">
+                        <p class="text-justify">A user gets a browser add-on that enables them to share their experience with information resources that participate in the ecosystem for a reward. Users rate content, audience age settings, usability, as well as share their feelings about ongoing advertisement campaigns by taking part in brief or detailed surveys.<br><br> The resulting data is processed and stored in the blockchain. Then, the data is used by advertisers, agencies and publishers themselves to research, improve and select placement options and assess past campaigns. Node owners are rewarded for storing information under the Proof Of Stake (POS) consensus model.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="screen-section" id="technicals-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="section-heading">VERBAX Technicals</h2>
+                    </div>
+                </div>
+                <div class="site-technicals-wrapper">
+                    <div class="row row-eq-height">
+                        <div class="col-sm-2">
+                            <p class="site-technicals-heading">
+                                <span>Applications Layer</span>
+                            </p>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="site-technicals-badges-wrapper">
+                                <div class="row row-eq-height">
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-application">
+                                            <span>Wallet</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-application">
+                                            <span>Explorer</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-application">
+                                            <span>Extension</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-application">
+                                            <span>Pub Tool</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-application">
+                                            <span>Adv Tool</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-eq-height">
+                        <div class="col-sm-2">
+                            <p class="site-technicals-heading">
+                                <span>Services Layer</span>
+                            </p>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="site-technicals-badges-wrapper">
+                                <div class="row row-eq-height">
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-service">
+                                            <span>API</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-service">
+                                            <span>Pub Data Crawler</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-service">
+                                            <span>Data Processor</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-service">
+                                            <span>Poll Engine</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-service">
+                                            <span>Matcher and<br>Aggregator</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-eq-height">
+                        <div class="col-sm-2">
+                            <p class="site-technicals-heading">
+                                <span>Node Services Layer</span>
+                            </p>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="site-technicals-badges-wrapper">
+                                <div class="row row-eq-height">
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-node">
+                                            <span>Decentralized<br>Storage</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-node">
+                                            <span>Private Key<br>Managment</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-node">
+                                            <span>Information<br>Security</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-eq-height">
+                        <div class="col-sm-2">
+                            <p class="site-technicals-heading">
+                                <span>Fundamental Blockchain Layer</span>
+                            </p>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="site-technicals-badges-wrapper">
+                                <div class="row row-eq-height">
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-blockchain">
+                                            <span>Consensus<br>Algorithm</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-blockchain">
+                                            <span>Digital Asset</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1-5">
+                                        <div class="site-technicals-badge site-technicals-badge-blockchain">
+                                            <span>Distributed Ledger</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="screen-section" id="usage-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="section-heading">VERBAX usage</h2>
+                    </div>
+                </div>
+                <div class="site-usages-wrapper">
+                    <div class="row">
+                        <div class="col-sm-5 offset-sm-1 col-lg-3 offset-lg-0">
+                            <div class="site-usage-item">
+                                <img src="assets/images/usage-1.png" class="site-usage-item-image">
+                                <p class="site-usage-item-caption">
+                                    Ad campaign result research and data
+                                </p>
+                                <p class="site-usage-item-text">
+                                    Perform research the ad campaign results using collected and verified data with the VERBAX
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-lg-3">
+                            <div class="site-usage-item">
+                                <img src="assets/images/usage-2.png" class="site-usage-item-image">
+                                <p class="site-usage-item-caption">
+                                    Website scoring
+                                </p>
+                                <p class="site-usage-item-text">
+                                    Earn money for being panelist and helping to verify, vote and improve the enodified part of the internet.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 offset-sm-1 col-lg-3 offset-lg-0">
+                            <div class="site-usage-item">
+                                <img src="assets/images/usage-3.png" class="site-usage-item-image">
+                                <p class="site-usage-item-caption">
+                                    Ad Fraud detection
+                                </p>
+                                <p class="site-usage-item-text">
+                                    Pay tokens for unique Real-people-based fraud detection and brand-safety proves.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-lg-3">
+                            <div class="site-usage-item">
+                                <img src="assets/images/usage-4.png" class="site-usage-item-image">
+                                <p class="site-usage-item-caption">
+                                    Raw data + Ad campaign compilation
+                                </p>
+                                <p class="site-usage-item-text">
+                                    Use the ecosystem data for own research of the ecosystem participants activity. Paid by agency or advertiser
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 offset-sm-1 col-lg-3 offset-lg-0">
+                            <div class="site-usage-item">
+                                <img src="assets/images/usage-5.png" class="site-usage-item-image">
+                                <p class="site-usage-item-caption">
+                                    Trusted and scored portfolio
+                                </p>
+                                <p class="site-usage-item-text">
+                                    Pay a bit to verify your good name in a face of new audience and top-tier advertisers. Make them possible to run ads with you!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-lg-3">
+                            <div class="site-usage-item">
+                                <img src="assets/images/usage-6.png" class="site-usage-item-image">
+                                <p class="site-usage-item-caption">
+                                    Polling and DMP access (api)
+                                </p>
+                                <p class="site-usage-item-text">
+                                    Use the VERBAX ecosystem to implement your processes and ideas!
+                                    You can build your own brand-new solutions, supported by the ecosystem.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 offset-sm-1 col-lg-3 offset-lg-0">
+                            <div class="site-usage-item">
+                                <img src="assets/images/usage-7.png" class="site-usage-item-image">
+                                <p class="site-usage-item-caption">
+                                    Ad campaign polling
+                                </p>
+                                <p class="site-usage-item-text">
+                                    Earn money by being a part of focus-group and content critic.
+                                    Feel the responsibility for the Internet.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-lg-3">
+                            <div class="site-usage-item">
+                                <img src="assets/images/usage-8.png" class="site-usage-item-image">
+                                <p class="site-usage-item-caption">
+                                    The provision of data (dmp)
+                                </p>
+                                <p class="site-usage-item-text">
+                                    Earn money, providing the new data to VERBAX ecosystem
+                                    Fight against entropy
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="screen-section" id="roadmap-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="section-heading">VERBAX roadmap</h2>
+                    </div>
+                </div>
+                <div class="row row-eq-height roadmap-wrapper">
+                    <div class="col-sm-2 pad-block">
+                        <img src="assets/images/landscape-vertical.png" class="roadmap-image">
+                    </div>
+                    <div class="col-sm-10 col-lg-12">
+                        <div class="roadmap-list">
+
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    Constructing Core Idea (q3 2018)
+                                </p>
+                            </div>
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    Reaserch (q4 2018)
+                                </p>
+                            </div>
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    Private round (q3 2019)
+                                </p>
+                            </div>
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    IEO (q3 2019)
+                                </p>
+                            </div>
+
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    Economics Revision (q3 2019)
+                                </p>
+                            </div>
+
+
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    Ecosystem final vision (q3 2019)
+                                </p>
+                            </div>
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    Blockchain final architecture (q3 2019)
+                                </p>
+                            </div>
+
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    Publisher code beta release  (q1 2020)
+                                </p>
+                            </div>
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    Wallet beta (q1 2020)
+                                </p>
+                            </div>
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    Explorer beta release (q1 2020)
+                                </p>
+                            </div>
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    Testnet (q1 2020)
+                                </p>
+                            </div>
+
+                            <div class="roadmap-list-item">
+                                <img src="assets/images/roadmap-dot-vertical.png" class="roadmap-list-item-dot-vertical pad-hide mob-hide">
+                                <img src="assets/images/roadmap-dot-horizontal.png" class="roadmap-list-item-dot-horizontal pad-block mob-block">
+                                <p class="roadmap-list-item-text">
+                                    Release (q1 2020)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="roadmap-image-wrapper">
+                            <img src="assets/images/landscape-horizontal.png" class="roadmap-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="screen-section" id="team-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="section-heading">VERBAX Team & Advisers</h2>
+                    </div>
+                </div>
+                <div class="team-wrapper" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
+                     unselectable="on"
+                     onselectstart="return false;"
+                     onmousedown="return false;">
+                    <div class="row">
+                        <div class="col-sm-4 offset-sm-2 col-lg-3 offset-lg-0">
+                            <div class="team-person">
+
+                                <div class="team-person-top-line">
+                                    <p class="team-person-name">
+                                        Jonathan Hudson (CEO)
+                                    </p>
+
+                                </div>
+                                <p class="team-person-text">
+                                    ITMO graduated. Nine years in digital advertising and marketing. Started 3 private projects in the internet advertising and web traffic field. Well-known in the digital advertising market. Familiar with IT, internet-marketing, strategic sales & partnerships. Сo-founder of Pclab.io Crypto Advertising Network. Strong crypto-believer since 2016.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-3">
+                            <div class="team-person">
+
+                                <div class="team-person-top-line">
+                                    <p class="team-person-name">
+                                        Rinat Kirschner (CMO)
+                                    </p>
+
+                                </div>
+                                <p class="team-person-text">
+                                    ITMO, Rinat is a serial entrepreneur with a background in marketing, mainly focused on the European and the Asian market. Rinat has 7+ years experience in affiliate marketing and business development. He has been working with some of the biggest brands such as Uber, Yandex, Aliexpress, Plarium, IGG, Badoo, Forex Club. Сo-founder of Pclab.io.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-3">
+                            <div class="team-person">
+
+                                <div class="team-person-top-line">
+                                    <p class="team-person-name">
+                                        Michael Steele (Legal)
+                                    </p>
+
+                                </div>
+                                <p class="team-person-text">
+                                    Legal. Licensed lawyer of the State of New York, US. He analyzed the nature of the token and blockchain projects (Legal Opinion), scrutinizing GDPR compliance rules with the companies and implementing that, advised on IP protection of international internet businesses. Worked in Albrecht & Vitte, i-Free, Liberty Mutual Group, ICOLAW and others. Protected LLM in international IP in Chicago, passed the NY Bar in 2011, became Patent attorney and certified specialist in the field of GDPR.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-3">
+                            <div class="team-person">
+
+                                <div class="team-person-top-line">
+                                    <p class="team-person-name">
+                                        David A Burke (Technology)
+                                    </p>
+
+                                </div>
+                                <p class="team-person-text">
+                                    Strong IT manager with experience at AI&BC projects like computer vision, crypto exchangers, wallets and security contours. Focus: Blockchain Architecture, Python, Solidity, Product Strategy, Team Management.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-4 col-lg-3">
+                            <div class="team-person">
+
+                                <div class="team-person-top-line">
+                                    <p class="team-person-name">
+                                        Jeffrey M Boyd (BDO)
+                                    </p>
+
+                                </div>
+                                <p class="team-person-text">
+                                    Talented BDO with major experience at global digital advertising market. Best in the field of attracting advertisers and publisher acquisition. Was growing up in alfaleads and pclab.io team.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-3">
+                            <div class="team-person">
+
+                                <div class="team-person-top-line">
+                                    <p class="team-person-name">
+                                        Walter Murdock (Full stack developer)
+                                    </p>
+
+                                </div>
+                                <p class="team-person-text">
+                                    6 years experience, big data, blockchain. Over the last two years, Ilya has led the development department at the SaaS startup for advertising market
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-3">
+                            <div class="team-person">
+
+                                <div class="team-person-top-line">
+                                    <p class="team-person-name">
+                                        Helen Billingsley ( UX/UI Architect)
+                                    </p>
+
+                                </div>
+                                <p class="team-person-text">
+                                    7 years in UI/UX design. I'm designer who can understand and solve problems. I like to make things aesthetic and constructive, but at the same time - convenient and effective.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-3">
+                            <div class="team-person">
+
+                                <div class="team-person-top-line">
+                                    <p class="team-person-name">
+                                        Amie McLaren (PR)
+                                    </p>
+
+                                </div>
+                                <p class="team-person-text">
+                                    4 years in affiliate marketing, focused on the European market and financial sector. She has been working with Iq option, Olymp trade, Forex club, eToro.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-3">
+                            <div class="team-person">
+
+                                <div class="team-person-top-line">
+                                    <p class="team-person-name">
+                                        Gary Boggs (Technology adviser)
+                                    </p>
+
+                                </div>
+                                <p class="team-person-text">
+                                    CEO and COO with extensive IT experience. AI evangelist. Highly experienced in recruiting technical teams, building business processes and products. Latitude 59 2019 Pitch competition winner. MWC Barcelona 2019 Participant.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-3">
+                            <div class="team-person">
+
+                                <div class="team-person-top-line">
+                                    <p class="team-person-name">
+                                        Ilia Karamov (Funancial adviser)
+                                    </p>
+
+                                </div>
+                                <p class="team-person-text">
+                                    Finance Business Partner at Yota - solid Russian telecom. Have a strong finance degree at the top-2 Russian University and valued experience in treasury and Creation and control of budget execution.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-3">
+                            <div class="team-person">
+
+                                <div class="team-person-top-line">
+                                    <p class="team-person-name">
+                                        George Chiu (Board adviser)
+                                    </p>
+
+                                </div>
+                                <p class="team-person-text">
+                                    Commercial Director Wowoo exchange, ex digial lead OAX. Fintech business sustainability and transformation specialist with excellent global exposure. Strong multi-industry experience across domains and functions within the blockchain ecosystem ranging from consulting, marketing, digital, outreach, technology, partnerships, investment, governance, strategy and product management.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contacts-section">
+        <div class="container">
+            <div class="row row-eq-height">
+                <div class="col-sm-9 col-lg-7 offset-lg-2">
+                    <nav class="navigation">
+                        <a href="#top-section"><span>Home</span></a>
+                        <a href="#what-is-section"><span>What is?</span></a>
+                        <a href="#ecosystem-section"><span>Ecosystem</span></a>
+                        <a href="#technicals-section"><span>Technicals</span></a>
+                        <a href="#usage-section"><span>Usage</span></a>
+                        <a href="#roadmap-section"><span>Roadmap</span></a>
+                        <a href="#team-section"><span>Team</span></a>
+
+                        <a href="javascript:void()">
+                            <img src="~/Content/credit-cartd.png" />
+                        </a>
+                    </nav>
+                    <hr />
+                    <nav>
+                        <a href="javascript:void()">
+                            <p class="copyright text-left">
+                                BTCEX Service Consult OÜ <br />
+                                (r.n. 14816828) <br />
+                                ADDRESS: Roseni 13, Downtown, <br />
+                                Tallinn, Harju County, 10111
+                            </p>
+                        </a>
+                        <div>
+                            <a href="mailto:support@verbaxico.com">
+                                <p class="copyright text-right">
+                                    Contact: support@verbaxico.com
+
+                                </p>
+                            </a>
+                            <a href="/home/terms" target="_blank">
+                                <span class="copyright text-right">
+                                    Terms and Conditions
+                                </span>
+                            </a>
+                            <br />
+                            <a href="/home/privacy" target="_blank">
+                                <span class="copyright text-right">
+                                    Privacy Policy
+                                </span>
+                            </a>
+                        </div>
+                    </nav>
+                    <hr />
+                    <nav>
+                        <a href="javascript:void()">
+                            <p class="copyright text-right">
+                                © VERBAX. Verbax is a subsidiary of BTCEX Service Consult OÜ. All Rights Reserved.
+                            </p>
+                        </a>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Apr 10, 2020 15:37:25").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            $("#cu-days").html(Math.floor(distance / (1000 * 60 * 60 * 24)));
+            $("#cu-hours").html(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            $("#cu-minutes").html(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+            $("#cu-seconds").html(Math.floor((distance % (1000 * 60)) / 1000));
+
+
+        }, 1000);
+    </script>
+</body>
+
+</html>

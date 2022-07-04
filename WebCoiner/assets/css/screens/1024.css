@@ -1,0 +1,60 @@
+@media screen and (min-width:1024px) and (max-width:1279px){
+
+    header {
+        padding-top: 35px;
+    }
+
+    #top-section h1 {
+        margin-bottom: 40px;
+        font-size: 100px;
+        line-height: 100px;
+    }
+
+    #top-section .top-section-slogan{
+        font-size: 50px;
+    }
+    
+    .section-text-wrapper p{
+        line-height: 1.5;
+        font-size: 16px;
+    }
+
+    .section-text-wrapper .section-heading{
+        margin-bottom: 40px;
+    }
+
+    .what-is-wrapper img {
+        max-width: 500px;
+        top: 50%;
+        transform: translate(10%,-50%);
+    }
+
+    .section-text-wrapper .buttons-inline {
+        margin-top: 40px;
+    }
+
+    .asis-tobe-carousel-controls-wrapper > div{
+        -ms-flex: 0 0 98%;
+        flex: 0 0 98%;
+        max-width: 98%;
+        margin-left: 1%;
+    }
+
+    .enod-usage-item{
+        min-height: 384px;
+    }
+
+    .roadmap-list-item-text{
+        font-size: 16px;
+    }
+
+    .roadmap-image-wrapper img {
+        height: auto;
+        max-width: 1300px;
+    }
+
+    footer .footer-social-icons {
+        width: 265px;
+    }
+
+}

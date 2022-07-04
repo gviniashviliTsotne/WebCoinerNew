@@ -1,0 +1,1371 @@
+﻿@{
+    @model WebCoiner.GlobalDashboardList
+    //decimal currentpercentage = 23;
+    Console.WriteLine("STUFF");
+    double txRaised = (double)Model.Raised;
+    double raised = ((double)Model.Raised / 120000000) * 100;
+    long num = 0;
+    long.TryParse(txRaised.ToString(), out num);
+    String finalRaised = num.ToString("N0");
+
+    double percentage = ((double)Model.Raised / 120000000) * 100;
+    //155 = 10M
+    double finalRaisedDo = Convert.ToDouble(finalRaised);
+    Console.WriteLine("RAISED IS " + finalRaisedDo);
+    if (finalRaisedDo > 0 && finalRaisedDo <= 500000)
+    {
+        percentage = 5;
+    }
+    else if (finalRaisedDo > 500000 && finalRaisedDo <= 1000000)
+    {
+        percentage = 10;
+    }
+    else if (finalRaisedDo > 1000000 && finalRaisedDo <= 1500000)
+    {
+        percentage = 15;
+    }
+    else if (finalRaisedDo > 1500000 && finalRaisedDo <= 2000000)
+    {
+        percentage = 20;
+    }
+    else if (finalRaisedDo > 2000000 && finalRaisedDo <= 2500000)
+    {
+        percentage = 25;
+    }
+    else if (finalRaisedDo > 2500000 && finalRaisedDo <= 3000000)
+    {
+        percentage = 30;
+    }
+    else if (finalRaisedDo > 3000000 && finalRaisedDo <= 3500000)
+    {
+        percentage = 35;
+    }
+    else if (finalRaisedDo > 3000000 && finalRaisedDo <= 3500000)
+    {
+        percentage = 40;
+    }
+    else if (finalRaisedDo > 3000000 && finalRaisedDo <= 3500000)
+    {
+        percentage = 45;
+    }
+    else if (finalRaisedDo > 3500000 && finalRaisedDo <= 4000000)
+    {
+        percentage = 50;
+    }
+    else if (finalRaisedDo > 4000000 && finalRaisedDo <= 5000000)
+    {
+        percentage = 80;
+    }
+    else if (finalRaisedDo > 5000000 && finalRaisedDo <= 6000000)
+    {
+        percentage = 85;
+    }
+    else if (finalRaisedDo > 6000000 && finalRaisedDo <= 7000000)
+    {
+        percentage = 100;
+    }
+    else if (finalRaisedDo > 7000000 && finalRaisedDo <= 8000000)
+    {
+        percentage = 120;
+    }
+    else if (finalRaisedDo > 8000000 && finalRaisedDo <= 9000000)
+    {
+        percentage = 140;
+    }
+    else if (finalRaisedDo > 9000000 && finalRaisedDo <= 10000000)
+    {
+        percentage = 155;
+    }
+    else if (finalRaisedDo > 10000000 && finalRaisedDo <= 15000000)
+    {
+        percentage = 160;
+    }
+    else if (finalRaisedDo > 15000000 && finalRaisedDo <= 20000000)
+    {
+        percentage = 165;
+    }
+    else if (finalRaisedDo > 20000000 && finalRaisedDo <= 25000000)
+    {
+        percentage = 170;
+    }
+    else if (finalRaisedDo > 25000000 && finalRaisedDo <= 30000000)
+    {
+        percentage = 175;
+    }
+    else if (finalRaisedDo > 30000000 && finalRaisedDo <= 35000000)
+    {
+        percentage = 195;
+    }
+    else if (finalRaisedDo > 35000000 && finalRaisedDo < 40000000)
+    {
+        percentage = 200;
+    }
+    else if (finalRaisedDo >= 4000000 && finalRaisedDo <= 45000000)
+    {
+        percentage = 230;
+    }
+    else if (finalRaisedDo > 45000000 && finalRaisedDo <= 50000000)
+    {
+        percentage = 10;
+    }
+    else if (finalRaisedDo > 50000000 && finalRaisedDo <= 55000000)
+    {
+        percentage = 250;
+    }
+    else if (finalRaisedDo > 55000000 && finalRaisedDo <= 60000000)
+    {
+        percentage = 270;
+    }
+    else if (finalRaisedDo > 60000000 && finalRaisedDo <= 65000000)
+    {
+        percentage = 280;
+    }
+    else if (finalRaisedDo > 65000000 && finalRaisedDo <= 70000000)
+    {
+        percentage = 300;
+    }
+    else if (finalRaisedDo > 70000000 && finalRaisedDo <= 75000000)
+    {
+        percentage = 320;
+    }
+    else if (finalRaisedDo > 75000000 && finalRaisedDo < 80000000)
+    {
+        percentage = 325;
+    }
+    else if (finalRaisedDo >= 80000000 && finalRaisedDo <= 85000000)
+    {
+        percentage = 350;
+    }
+    @* else if (finalRaisedDo > 85000000 && finalRaisedDo <= 95000000)
+        {
+            percentage = 350;
+        }*@
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Bitreal</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Blockchain scaling and interoperability">
+    <meta name="author" content="Bitreal Pror">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="~/assets/home/animate.css">
+    <!-- Latest Bootstrap min CSS -->
+    <link rel="stylesheet" href="~/assets/home/bootstrap.min.css">
+    <!-- Google Font -->
+    <link href="~/assets/home/css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="~/assets/home/font-awesome.min.css">
+    <!-- ionicons CSS -->
+    <link rel="stylesheet" href="~/assets/home/ionicons.min.css">
+    <!-- cryptocoins CSS -->
+    <link rel="stylesheet" href="~/assets/home/cryptocoins.css">
+    <!--- owl carousel CSS-->
+    <link rel="stylesheet" href="~/assets/home/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/home/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/Content/counter.css" />
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="~/assets/home/magnific-popup.css">
+    <link rel="stylesheet" href="~/assets/home/spop.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/home/font-awesome.min.css">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/assets/home/style.css">
+    <link rel="stylesheet" href="~/assets/home/fonts.css">
+    <link rel="stylesheet" href="~/assets/home/responsive.css">
+    <link rel="stylesheet" href="~/assets/home/roadmap.css">
+    <!-- Color CSS -->
+    <link id="layoutstyle" rel="stylesheet" href="~/assets/home/theme.css">
+    <!-- SITE TITLE -->
+    <title>Cryptocash – ICO, Cryptocurrency Website & ICO Landing Page HTML + Dashboard Template</title>
+    <!-- Favicon Icon -->
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="~/assets/css/style/animate.css">
+    <!-- Latest Bootstrap min CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="~/assets/css/style/font-awesome.min.css">
+    <!-- ionicons CSS -->
+    <link rel="stylesheet" href="~/assets/css/style/ionicons.min.css">
+    <!--- owl carousel CSS-->
+    <link rel="stylesheet" href="~/assets/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/owlcarousel/css/owl.theme.default.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="~/assets/css/style/magnific-popup.css">
+    <link rel="stylesheet" href="~/assets/css/style/spop.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/assets/css/style/style.css">
+    <link rel="stylesheet" href="~/assets/css/style/responsive.css">
+    <!-- Color CSS -->
+    <link id="layoutstyle" rel="stylesheet" href="~/assets/color/theme.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="~/assets/home/analytics.js"></script>
+    <script async="" src=" ~/assets/home/js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-106310707-1', { 'anonymize_ip': true });
+    </script>
+
+
+    <style>
+        .blackend {
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .countdown {
+            top: 189px;
+            margin: 0 auto;
+            z-index: 10;
+            position: absolute;
+        }
+
+            .countdown .bloc-time {
+                float: left;
+                margin-right: 15px;
+                text-align: center;
+            }
+
+                .countdown .bloc-time:last-child {
+                    margin-right: 0;
+                }
+
+            .countdown .count-title {
+                display: block;
+                margin-bottom: 15px;
+                font: normal 0.94em "Lato";
+                color: #f7f7f7;
+                text-transform: uppercase;
+            }
+
+            .countdown .figure {
+                position: relative;
+                float: left;
+                height: 66px;
+                width: 55px;
+                margin-right: 2px;
+                background-color: #fff;
+                border-radius: 8px;
+                -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+                -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+                box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+            }
+
+                .countdown .figure:last-child {
+                    margin-right: 0;
+                }
+
+                .countdown .figure > span {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    font: normal 4em/65px "Lato";
+                    font-weight: 700;
+                    color: #bd2983;
+                }
+
+                .countdown .figure .top:after,
+                .countdown .figure .bottom-back:after {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                }
+
+                .countdown .figure .top {
+                    z-index: 3;
+                    background-color: #f7f7f7;
+                    transform-origin: 50% 100%;
+                    -webkit-transform-origin: 50% 100%;
+                    -moz-border-radius-topleft: 10px;
+                    -webkit-border-top-left-radius: 10px;
+                    border-top-left-radius: 10px;
+                    -moz-border-radius-topright: 10px;
+                    -webkit-border-top-right-radius: 10px;
+                    border-top-right-radius: 10px;
+                    -moz-transform: perspective(200px);
+                    -ms-transform: perspective(200px);
+                    -webkit-transform: perspective(200px);
+                    transform: perspective(200px);
+                }
+
+                .countdown .figure .bottom {
+                    z-index: 1;
+                }
+
+                    .countdown .figure .bottom:before {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 50%;
+                        background-color: rgba(0, 0, 0, 0.02);
+                    }
+
+                .countdown .figure .bottom-back {
+                    z-index: 2;
+                    top: 0;
+                    height: 50%;
+                    overflow: hidden;
+                    background-color: #f7f7f7;
+                    -moz-border-radius-topleft: 10px;
+                    -webkit-border-top-left-radius: 10px;
+                    border-top-left-radius: 10px;
+                    -moz-border-radius-topright: 10px;
+                    -webkit-border-top-right-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+
+                    .countdown .figure .bottom-back span {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                    }
+
+                .countdown .figure .top,
+                .countdown .figure .top-back {
+                    height: 50%;
+                    overflow: hidden;
+                    -moz-backface-visibility: hidden;
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                }
+
+                .countdown .figure .top-back {
+                    z-index: 4;
+                    bottom: 0;
+                    background-color: #fff;
+                    -webkit-transform-origin: 50% 0;
+                    transform-origin: 50% 0;
+                    -moz-transform: perspective(200px) rotateX(180deg);
+                    -ms-transform: perspective(200px) rotateX(180deg);
+                    -webkit-transform: perspective(200px) rotateX(180deg);
+                    transform: perspective(200px) rotateX(180deg);
+                    -moz-border-radius-bottomleft: 10px;
+                    -webkit-border-bottom-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    -moz-border-radius-bottomright: 10px;
+                    -webkit-border-bottom-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+
+                    .countdown .figure .top-back span {
+                        position: absolute;
+                        top: -100%;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                    }
+    </style>
+</head>
+<script>
+    @*if (location.protocol !== 'https:') {
+        location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    }*@
+</script>
+<body style="background-color: #3a57a5;">
+    <div class="parallax-mirror"
+         style="visibility: hidden; z-index: 1; position: fixed; top: 0px; left: 0px; overflow: hidden; transform: translate3d(0px, 0px, 0px); height: 396px; width: 1903px;">
+        <img class="parallax-slider" src="~/assets/home/footer_bg.png"
+             style="transform: translate3d(0px, 0px, 0px); position: absolute; left: 0px; height: 1498px; width: 1903px; max-width: none;">
+    </div>
+    <div class="parallax-mirror"
+         style="visibility: hidden; z-index: 1; position: fixed; top: 0px; left: 0px; overflow: hidden; transform: translate3d(0px, 0px, 0px); height: 758px; width: 1903px;">
+        <img class="parallax-slider" src="~/assets/home/token_bg.png"
+             style="transform: translate3d(0px, 0px, 0px); position: absolute; left: 0px; height: 1823px; width: 1903px; max-width: none;">
+    </div>
+    <div class="parallax-mirror"
+         style="visibility: visible; z-index: 1; position: fixed; top: 0px; left: 0px; overflow: hidden; transform: translate3d(0px, 0px, 0px); height: 889px; width: 1903px;">
+        <img class="parallax-slider" src="~/assets/home/banner_bg2.png"
+             style="transform: translate3d(0px, 0px, 0px); position: absolute; top: 0px; left: -105px; height: 889px; width: 2113px; max-width: none;">
+    </div>
+
+
+    <!-- End of StatCounter Code -->
+    <!-- START LOADER -->
+    <div id="loader-wrapper">
+        <div id="loading-center-absolute">
+            <div class="object" id="object_four"></div>
+            <div class="object" id="object_three"></div>
+            <div class="object" id="object_two"></div>
+            <div class="object" id="object_one"></div>
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+    <!-- END LOADER -->
+    <!-- START HEADER -->
+    <header class="header_wrap fixed-top">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand page-scroll animation animated fadeInDown" href="#home_section"
+                   data-animation="fadeInDown" data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">
+                    <img alt="logo" src="~/assets/images/logo.png" style="max-width: 400px">
+                </a>
+                <button class="navbar-toggler animation animated fadeInDown" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation" data-animation="fadeInDown" data-animation-delay="1.1s"
+                        style="animation-delay: 1.1s; opacity: 1;">
+                    <span class="ion-android-menu"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto">
+                        <li class="dropdown animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="1.1s"
+                            style="animation-delay: 1.1s; opacity: 1;">
+                            <a data-toggle="" class="nav-link " href="#">Home</a>
+                            <div class="dropdown-menu">
+                                <ul class="list_none">
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="1.2s"
+                            style="animation-delay: 1.2s; opacity: 1;">
+                            <a class="nav-link page-scroll nav_item"
+                               href="#service">Services</a>
+                        </li>
+                        <li class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="1.3s"
+                            style="animation-delay: 1.3s; opacity: 1;">
+                            <a class="nav-link page-scroll nav_item"
+                               href="#about">About</a>
+                        </li>
+                        <li class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="1.5s"
+                            style="animation-delay: 1.5s; opacity: 1;">
+                            <a class="nav-link page-scroll nav_item" href="#roadmap">
+                                Road
+                                Map
+                            </a>
+                        </li>
+                        <li class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="1.3s"
+                            style="animation-delay: 1.3s; opacity: 1;">
+                            <a class="nav-link page-scroll nav_item"
+                               href="#faq">Faq</a>
+                        </li>
+                        <li class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="1.8s"
+                            style="animation-delay: 1.8s; opacity: 1;">
+                            <a class="nav-link page-scroll nav_item"
+                               href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav nav_btn align-items-center">
+                        <li class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="1.9s"
+                            style="animation-delay: 1.9s; opacity: 1;">
+                        </li>
+                        <li class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="2s"
+                            style="animation-delay: 2s; opacity: 1;">
+                            <a class="btn btn-default btn-radius nav_item"
+                               href="account/login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- END HEADER -->
+    <!-- START SECTION BANNER -->
+    <section id="home_sectionBg" class="section_banner bg_black_dark" data-z-index="1" data-parallax="scroll"
+             data-image-src="assets/images/banner_bg2.png">
+        @*<div id="banner_bg_effect" class="banner_effect">
+                <canvas class="particles-js-canvas-el" width="1903" height="889"
+                        style="width: 100%; height: 100%;"></canvas>
+            </div>*@
+        <div class="container-fluid" style="max-width: 1600px; padding: 15px 50px">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-6 col-md-12 col-sm-12 order-lg-last" style="position: relative; top: 55px;">
+                    <div class="banner_text_s2 text_md_center d-flex flex-column justify-content-around">
+                        <div class="banner_image_right res_md_mb_50 res_xs_mb_30 animation animated fadeInRight"
+                             data-animation-delay="1.5s" data-animation="fadeInRight" style=" animation-delay: 1.5s; opacity: 1;">
+                            @*<img alt="banner_vector2" src="~/assets/admin/source/main.png">*@
+                        </div>
+                        <h1 class="animation animated fadeInUp position-relative" data-animation="fadeInUp" data-animation-delay="1.1s"
+                            style="animation-delay: 1.1s; opacity: 1;">
+                            <strong style="font-size: 35px;">Blockchain for 5G.</strong><br><br>
+                            Combination of two revolutionary innovations
+                            <br>
+                            <strong>The Blockchain System and 5G Go Beyond Networks</strong>
+                        </h1>
+                        <ul class="progress-info">
+                            <!---->
+                            <li><span>Raised</span> @Model.Raised.ToString("C2")</li>
+                        </ul>
+                        <div style="color: #3ab55a !important" class="progress-bar">
+                            <div class="progress-hcap" data-percent="98" style="width: 98%;">
+                                <!---->
+                                <div style="color:#39b159;">Hardcap<span style="color:#39b159;">$120 ML</span></div>
+                            </div>
+                            <div class="progress-hcap" data-percent="50" style="width: 56%;">
+                                <!---->
+                                <div style="color:#39b159;">Softcap<span style="color:#39b159;">$70 ML</span></div>
+                            </div>
+                            <div class="progress-scap" data-percent="25" style="width: 25%;">
+                                <!---->
+                                <div style="color:#39b159;">Pre Sale<span style="color:#39b159;">$25 ML</span></div>
+                            </div>
+
+                            <div class="progress-scap" data-percent="0" style="width: 0%;">
+                                <!---->
+                                <div style="color:#39b159;">Private Sale<span style="color:#39b159;"></span></div>
+                            </div>
+
+                            <div class="progress-percent" data-percent="5" style="width: @raised%;"></div>
+                        </div>
+                        <h5 class="animation presale_txt animated fadeInUp" data-animation="fadeInUp"
+                            data-animation-delay="1.3s" style="animation-delay: 1.3s; color: #3a57a5 !important; margin-top: 20px; opacity: 1;">
+                            Token Sale  <mark class="gradient_box">Live</mark>
+                        </h5>
+                        <div class="transparent_bg tk_counter_inner m-lg-0 banner_token text-center px-0 animation animated fadeIn"
+                             data-animation="fadeIn" data-animation-delay="1.4s" style="animation-delay: 1.4s; opacity: 1;">
+                            @*timer*@
+                            <div class="tk_countdown_time transparent_bg box_shadow_none border counter_medium animation animated fadeInUp"
+                                 data-animation="fadeInUp" data-animation-delay="1.2s" data-time="2022/06/25 00:00:00"
+                                 style="animation-delay: 1.2s; opacity: 1;">
+                                <span class="counter_box">
+                                    <span class="tk_counter days">
+                                        43
+                                    </span><span class="tk_text">Days</span>
+                                </span><span class="counter_box">
+                                    <span class="tk_counter hours">09</span><span class="tk_text">Hours</span>
+                                </span><span class="counter_box">
+                                    <span class="tk_counter minutes">50</span><span class="tk_text">Minutes</span>
+                                </span><span class="counter_box">
+                                    <span class="tk_counter seconds">46</span><span class="tk_text">Seconds</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="btn_group pt-2 pb-3 animation animated fadeInUp" data-animation="fadeInUp"
+                             data-animation-delay="1.4s" style="animation-delay: 1.4s; opacity: 1;">
+                            <a href="~/Content/prolution_whitepaper.pdf" class="btn btn-default btn-radius nav-link ">
+                                Whitepaper <img style="width: 25px" src="~/assets/admin/source/wp.png" />
+                            </a>
+                            <a href="account/register" class="btn btn-border btn-radius">
+                                Buy Token Now! <img style="width: 25px" src="~/assets/admin/source/buy.png" />
+                            </a>
+                        </div>
+                        <span class="icon_title animation animated fadeInUp" data-animation="fadeInUp"
+                              data-animation-delay="1.4s" style="animation-delay: 1.4s;color: #3a57a5 !important;opacity: 1;">We accept :</span>
+                        <ul class="list_none currency_icon">
+                            <li class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="1.5s"
+                                style="animation-delay: 1.5s; opacity: 1;">
+                                <img class="svg" style="width: 25px" alt="Bitcoin" src="~/assets/images/bitcoin.svg">
+                                <span style="color: #3a57a5 !important">Bitcoin</span>
+                            </li>
+                            <li class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="1.6s"
+                                style="animation-delay: 1.6s; opacity: 1;">
+                                <img class="svg" alt="ethereum" src="~/assets/images/ethereum.svg" style="width: 25px">
+                                <span style="color: #3a57a5 !important">Ethereum </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 order-lg-first orderFirst">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION BANNER -->
+    <!-- START SECTION SERVICES -->
+    <section id="service" class="small_pb">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
+                    <div class="title_default_light title_border text-center">
+                        <h4 class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.2s"
+                            style="animation-delay: 0.2s; opacity: 1;">
+                            We Represent Our Innovative Solutoins For You
+                        </h4>
+                        <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.4s"
+                           style="animation-delay: 0.4s; opacity: 1;"> We Represent Our Innovative Solutoins For You</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box_wrap text-center animation animated fadeInUp" data-animation="fadeInUp"
+                         data-animation-delay="0.6s" style="animation-delay: 0.6s; opacity: 1;">
+                        <img src="~/assets/home/service_icon1.png" alt="service_icon1">
+                        <h4>Security advancements</h4>
+                        <p>
+                            Blockchain intends to advance the security and privacy level of 5G networks and services by contributing many technical features such as transparency,
+                            traceability, and decentralization.
+                        </p>
+                        <br><br><br>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box_wrap text-center animation animated fadeInUp" data-animation="fadeInUp"
+                         data-animation-delay="0.8s" style="animation-delay: 0.8s; opacity: 1;">
+                        <img src="~/assets/home/service_icon2.png" alt="service_icon2">
+                        <h4>Improvements of system performance</h4>
+                        <p>
+                            Blockchain useability also significantly enhances the performance of 5G systems.
+                        </p><br><br>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box_wrap text-center animation animated fadeInUp" data-animation="fadeInUp"
+                         data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">
+                        <img src="~/assets/home/service_icon3.png" alt="service_icon3">
+                        <h4>Simplifying the Network</h4>
+                        <p>
+                            it is considered that blockchain is able to make huge 5G service deployments with the help of its decentralized infrastructure.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box_wrap text-center animation animated fadeInUp" data-animation="fadeInUp"
+                         data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">
+                        <img src="~/assets/home/service_icon4.png" alt="service_icon4">
+                        <h4>Distributed ledger (Blockchain Database)</h4>
+                        <p>
+                            It represents the type of datastore which is connected and repeated between the institutions of the P2P system.
+                            Here, each and every record contains a unique encrypted signature related to timestamp and makes the ledger reviewable and enduring.
+                            Smart contracts: a programmable application that is built in the Blockchain system.
+                        </p><br><br><br><br>
+                    </div>
+                </div>
+                <div class="col-lg-4  col-md-6 col-sm-12">
+                    <div class="box_wrap text-center animation animated fadeInUp" data-animation="fadeInUp"
+                         data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">
+                        <img src="~/assets/home/service_icon5.png" alt="service_icon5">
+                        <h4>Permanency</h4>
+                        <p>
+                            This can be represented as an ability of a blockchain ledger to store transfer data immutable over a period.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box_wrap text-center animation animated fadeInUp" data-animation="fadeInUp"
+                         data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">
+                        <img src="~/assets/home/service_icon6.png" alt="service_icon6">
+                        <h4>Decentralization</h4>
+                        <p>
+                            The decentralized blockchain system that does not rely upon any control center server to organize transactions.
+                        </p><br><br>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box_wrap text-center animation" data-animation="fadeInUp" data-animation-delay="1s"
+                         style="animation-delay: 1s; opacity: 1;">
+                        <img src="~/assets/home/service_icon9.png" alt="service_icon6">
+                        <h4>Transparency</h4>
+                        <p>
+                            Blockchain transparency arises from the fact that all data about the transaction on the blockchain system can be viewable for all system participants.
+                        </p><br><br>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box_wrap text-center animation" data-animation="fadeInUp" data-animation-delay="1s"
+                         style="animation-delay: 1s; opacity: 1;">
+                        <img src="~/assets/home/service_icon8.png" alt="service_icon6">
+                        <h4>Privacy and security</h4>
+                        <p>
+                            The key factors of the blockchain network are represented in its level of privacy and security, and in the use of private/public keys that it can provide.
+                            In addition, the network uses cryptographic maps to ensure and accomplish transactions between the network members. Blockchain use cases for cloud computing -Data availability, Privacy management, Data integrity, Lack of Stability,
+                            Lack of transparency
+                        </p><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION SERVICES -->
+    <!-- START SECTION ABOUT US -->
+    <section id="about" class="small_pt bg_light_dark">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="text_md_center">
+                        <img class="animation" data-animation="zoomIn" data-animation-delay="0.2s" src="~/assets/home/about_img2.png"
+                             alt="aboutimg2" style="animation-delay: 0.2s; opacity: 1;">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 res_md_mt_30 res_sm_mt_20">
+                    <div class="title_default_light title_border">
+                        <h4 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s"
+                            style="animation-delay: 0.2s; opacity: 1;">
+                            About Bitreal Pro
+                        </h4>
+                        <p class="animation" data-animation="fadeInUp" data-animation-delay="0.4s"
+                           style="animation-delay: 0.4s; opacity: 1;">
+                            The 5G wireless technology is on the way to be organized around the world. The fifth-generation technologies aim to promote diverse vertical
+                            applications by getting diverse smart devices and machines with extreme advancements in terms of the highest service quality, network capacity, and advanced
+                            production capabilities.
+                        </p>
+                        <p class="animation" data-animation="fadeInUp" data-animation-delay="0.8s"
+                           style="animation-delay: 0.8s; opacity: 1;">
+                            The blockchain, a rising and developing ecosystem, is offering revolutionary solutions to successfully sort out the challenges in the 5G community.
+                            According to the drastically rising capacities of the 5G technologies and the very recent explorations in the Blockchain ecosystem, blockchain-built-in services are
+                            anticipated to experience prompt development and claim significant benefits for the future society.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION ABOUT US -->
+    <!-- START SECTION TIMELINE -->
+    <section id="roadmap" class="small_pb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-timeline">
+                        <div class="timeline">
+                            <div class="timeline-content">
+                                <div class="timeline-icon">
+                                </div>
+                                <h3 class="title">Q2 2019</h3>
+                                <p class="description">
+                                    Blockchain testnet deployment
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-content">
+                                <div class="timeline-icon">
+                                </div>
+                                <h3 class="title">Q3 2019</h3>
+                                <p class="description">
+                                    Blockchain mainnet deployment
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-content">
+                                <div class="timeline-icon">
+                                </div>
+                                <h3 class="title">Q4 2019</h3>
+                                <p class="description">
+                                    Integrating global digital network records
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-content">
+                                <div class="timeline-icon">
+                                </div>
+                                <h3 class="title">Q1 2020</h3>
+                                <p class="description">
+                                    Developing global data unification network
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-content">
+                                <div class="timeline-icon">
+                                </div>
+                                <h3 class="title">Q2 2020</h3>
+                                <p class="description">
+                                    Integrating global digital network records
+                                </p>
+                                <p style="font-size: 12px">Supporting ETH and ERC20 tokens</p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-content">
+                                <div class="timeline-icon">
+                                </div>
+                                <h3 class="title">Q3 2020</h3>
+                                <p class="description">
+                                    Application of Hash #160 protocol Integrating global digital network records
+                                </p>
+                                <p style="font-size: 12px">Deposits, payments, trades and withdrawals in Bitcoin</p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-content">
+                                <div class="timeline-icon">
+                                </div>
+                                <h3 class="title">Q1 2021</h3>
+                                <p class="description">
+                                    Interoperability
+                                </p>
+                                <p style="font-size: 12px">Launching ICO project</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION TIMELINE -->
+    <!-- START SECTION FAQ -->
+    <section id="faq" class="bg_light_dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 offset-lg-2">
+                    <div class="title_default_light title_border text-center">
+                        <h4 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s"
+                            style="animation-delay: 0.2s; opacity: 1;">
+                            Have Any Questions?
+                        </h4>
+                        <p class="animation" data-animation="fadeInUp" data-animation-delay="0.4s"
+                           style="animation-delay: 0.4s; opacity: 1;">
+                            Frequently asked questions (FAQ) or Questions and Answers
+                            (Q&amp;A), are listed questions and answers, all supposed to be commonly asked in some context
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row small_space">
+                <div class="col-lg-12 col-md-12">
+                    <div class="tab_content">
+                        <ul class="nav nav-pills tab_nav_s2 tab_color_white justify-content-center" id="pills-tab" role="tablist">
+                            <li class="nav-item animation" data-animation="fadeInUp" data-animation-delay="0.5s"
+                                style="animation-delay: 0.5s; opacity: 1;">
+                                <a class="active" data-toggle="tab" href="#tab1" style="color: #3ab55a; font-size:25px; font-weight:bold">General</a>
+                            </li>
+                            @*<li class="nav-item animation" data-animation="fadeInUp" data-animation-delay="0.6s"
+                                    style="animation-delay: 0.6s; opacity: 1;">
+                                    <a data-toggle="tab" href="#tab2">DeFi related </a>
+                                </li>*@
+                        </ul>
+                        <div class="tab-content half_tab">
+                            <div class="tab-pane fade show active" id="tab1" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="accordion1" class="faq_content">
+                                            <div class="card animation" data-animation="fadeInUp" data-animation-delay="0.4s"
+                                                 style="animation-delay: 0.4s; opacity: 1;">
+                                                <div class="card-header" id="headingOne">
+                                                    <h6 class="mb-0">
+                                                        <a data-toggle="collapse" href="#collapseOne" aria-expanded="true"
+                                                           aria-controls="collapseOne">What is cryptocurrency?</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                                     data-parent="#accordion1">
+                                                    <div class="card-body">
+                                                        Cryptocurrency is a digital currency that facilitates the purchase of
+                                                        goods and payments for services but uses online ledger to store and secure online
+                                                        transactions.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card animation" data-animation="fadeInUp" data-animation-delay="0.6s"
+                                                 style="animation-delay: 0.6s; opacity: 1;">
+                                                <div class="card-header" id="headingTwo">
+                                                    <h6 class="mb-0">
+                                                        <a class="collapsed" data-toggle="collapse" href="#collapseTwo"
+                                                           aria-expanded="false" aria-controls="collapseTwo">
+                                                            Can
+                                                            I make money from Bitreal Pro ?
+                                                        </a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion1">
+                                                    <div class="card-body">
+                                                        Yes you can make money from Bitreal Pro.
+
+                                                        You may stake (a process of investing your funds and locking it up and earning interest).
+
+
+                                                        You may buy and hold until the currency increases in value.
+
+
+                                                        You may trade daily.
+
+                                                        You may get bonus tokens for referrals.
+
+                                                        You may get dividends.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card animation" data-animation="fadeInUp" data-animation-delay="0.8s"
+                                                 style="animation-delay: 0.8s; opacity: 1;">
+                                                <div class="card-header" id="headingThree">
+                                                    <h6 class="mb-0">
+                                                        <a class="collapsed" data-toggle="collapse" href="#collapseThree"
+                                                           aria-expanded="false" aria-controls="collapseThree">How do I save my Bitreal Pro ?</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                                     data-parent="#accordion1">
+                                                    <div class="card-body">
+                                                        The best way to store tokens is offline via a paper wallet. This is a
+                                                        cold wallet that you can generate from certain websites.
+                                                        It then produces both public and private keys that you can print out and keep out of sight.
+                                                        The safest crypto wallet is Trezor.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card animation" data-animation="fadeInUp" data-animation-delay="1s"
+                                                 style="animation-delay: 1s; opacity: 1;">
+                                                <div class="card-header" id="headingFour">
+                                                    <h6 class="mb-0">
+                                                        <a class="collapsed" data-toggle="collapse" href="#collapseFour"
+                                                           aria-expanded="false" aria-controls="collapseFour">When do I sell my Bitreal Pro ?</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion1">
+                                                    <div class="card-body">
+                                                        You may sell your tokens on any exchange available and receive payment
+                                                        in your desired available currency.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card animation" data-animation="fadeInUp" data-animation-delay="1s"
+                                                 style="animation-delay: 1s; opacity: 1;">
+                                                <div class="card-header" id="headingFour">
+                                                    <h6 class="mb-0">
+                                                        <a class="collapsed" data-toggle="collapse" href="#collapseFour"
+                                                           aria-expanded="false" aria-controls="collapseFour">How does the value grow ?</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion1">
+                                                    <div class="card-body">
+                                                        Tokens value grow due to usage and transactions by the community,
+                                                        continue development programmes and milestones hit by moderators and developers of the
+                                                        project.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+                                            <div id="accordion2" class="faq_content">
+                                                <div class="card animation" data-animation="fadeInUp" data-animation-delay="0.4s"
+                                                     style="animation-delay: 0.4s; opacity: 1;">
+                                                    <div class="card-header" id="headingFive">
+                                                        <h6 class="mb-0">
+                                                            <a data-toggle="collapse" href="#collapseFive" aria-expanded="true"
+                                                               aria-controls="collapseFive">How does the value grow ?</a>
+                                                        </h6>
+                                                    </div>
+                                                    <div id="collapseFive" class="collapse show" aria-labelledby="headingFive"
+                                                         data-parent="#accordion2">
+                                                        <div class="card-body">
+                                                            Tokens value grow due to usage and transactions by the community,
+                                                            continue development programmes and milestones hit by moderators and developers of the
+                                                            project.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab2" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div id="accordion3" class="faq_content">
+                                            <div class="card animation animated fadeInUp" data-animation="fadeInUp"
+                                                 data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                                                <div class="card-header" id="headingNine">
+                                                    <h6 class="mb-0">
+                                                        <a data-toggle="collapse" href="#collapseNine" aria-expanded="true"
+                                                           aria-controls="collapseNine">Why can’t defi be shut down?</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapseNine" class="collapse show" aria-labelledby="headingNine"
+                                                     data-parent="#accordion3">
+                                                    <div class="card-body">
+                                                        As thousands and millions of people contribute to a network, movement
+                                                        and use a token or a system, it makes it impossible to shut down.
+
+                                                        Defi is permissionless and has no source of failure, works with non custodial protocols
+                                                        which gives full control to users over their assets.
+
+                                                        Defi is unstoppable by design and is powered by promise of decentralization, which returns
+                                                        control to users.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card animation animated fadeInUp" data-animation="fadeInUp"
+                                                 data-animation-delay="0.6s" style="animation-delay: 0.6s; opacity: 1;">
+                                                <div class="card-header" id="headingTen">
+                                                    <h6 class="mb-0">
+                                                        <a class="collapsed" data-toggle="collapse" href="#collapseTen"
+                                                           aria-expanded="false" aria-controls="collapseTen">What are the core features of Defi?</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordion3">
+                                                    <div class="card-body">
+                                                        Management - Defi dapps use smart contexts sand blockchain technology
+                                                        to run without human intervention and the dapps are not controlled or managed by anyone.
+
+                                                        <br>Transparency - Defi operates on a very level of transparency which allows all
+                                                        transactions to be open to everyone to visibly check and also grants access to open source
+                                                        codes which are published on blockchain for anyone to audit.
+
+                                                        <br>User experience - Every user is able to use other platforms or create their own
+                                                        platforms if they are unable to use the interface of a defi app or just do not like it.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="accordion4" class="faq_content">
+                                            <div class="card animation animated fadeInUp" data-animation="fadeInUp"
+                                                 data-animation-delay="0.4s" style="animation-delay: 0.4s; opacity: 1;">
+                                                <div class="card-header" id="headingThirteen">
+                                                    <h6 class="mb-0">
+                                                        <a data-toggle="collapse" href="#collapseThirteen" aria-expanded="true"
+                                                           aria-controls="collapseThirteen">What services does defi provide?</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapseThirteen" class="collapse show" aria-labelledby="headingThirteen"
+                                                     data-parent="#accordion4">
+                                                    <div class="card-body">
+                                                        Lending and borrowing
+
+                                                        users are able to borrow funds using their cryptocurrency as collateral and also earn
+                                                        interest by lending out their digital assets.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card animation animated fadeInUp" data-animation="fadeInUp"
+                                                 data-animation-delay="0.6s" style="animation-delay: 0.6s; opacity: 1;">
+                                                <div class="card-header" id="headingFourteen">
+                                                    <h6 class="mb-0">
+                                                        <a class="collapsed" data-toggle="collapse" href="#collapseFourteen"
+                                                           aria-expanded="false" aria-controls="collapseFourteen">Is Defi just about payments ?</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen"
+                                                     data-parent="#accordion4">
+                                                    <div class="card-body">
+                                                        No. Defi gives global access to financial products and excluded
+                                                        intermediaries and is not supervised by any controlling or central authority.
+
+                                                        Defi is proof that cryptocurrency is way more than a digital asset with limited use.
+
+                                                        Defi has many financial use cases spanning across many service industries from payments to
+                                                        insurance and welcomes freedom, ownership, market growth, acceptance and inclusivity without
+                                                        limitations and borders for everyone.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION FAQ -->
+    <!-- START FOOTER SECTION -->
+    <footer id="contact">
+        <div class="top_footer bg_light_dark" data-z-index="1" data-parallax="scroll"
+             data-image-src="assets/images/footer_bg.png">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12 offset-lg-2">
+                        <div class="title_default_light title_border text-center">
+                            <h4 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s"
+                                style="animation-delay: 0.2s; opacity: 1;">
+                                Get In Touch!
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 d-flex flex-column align-items-center justify-content-center">
+                        <div class="footer_logo mb-3 animation" data-animation="fadeInUp" data-animation-delay="0.2s"
+                             style="animation-delay: 0.2s; opacity: 1;">
+                            <img alt="logo" src="~/assets/images/logo.png" style="max-width: 25px">
+                        </div>
+                        <div class="footer_desc">
+                            <p class="animation" data-animation="fadeInUp" data-animation-delay="0.4s"
+                               style="animation-delay: 0.4s; opacity: 1;">
+                                Bitreal Pro Defi
+
+                                Power Exchange decentralized finance platform built on and powered by Ethereum.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex justify-content-center flex-column align-items-center">
+                    <p class="text-center text-white opacity-5">
+                        Copyright © 2020 - 2021 Bitreal Pro  &nbsp;&nbsp;
+                        <a href="mailto:support@5gprimeico-pro.com Primer-ico.com"> Contact Us: support@5gprimeico-pro.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER SECTION -->
+    <a href="#" class="scrollup btn-default" style="display: none;">
+        <img class="svg" alt="logo" src="~/assets/images/up-arrow.svg" style="max-width: 150px">
+    </a>
+    <!-- JS Plugins -->
+    <!-- Latest jQuery -->
+    <script src="~/assets/home/jquery-3.6.0.min.js"></script>
+    <!-- Latest compiled and minified Bootstrap -->
+    <script src="~/assets/home/bootstrapJs/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/home/bootstrapJs/bootstrap.bundle.min.js"></script>
+    <!-- owl-carousel min js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+            integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+            crossorigin="anonymous"></script>
+    <!-- magnific-popup min js  -->
+    <script src="~/assets/home/magnific-popup.min.js"></script>
+    <!-- waypoints min js  -->
+    <script src="~/assets/home/waypoints.min.js"></script>
+    <!-- parallax js  -->
+    <script src="~/assets/home/parallax.js"></script>
+    <!-- countdown js  -->
+    <script src="~/assets/home/jquery.countdown.min.js"></script>
+    <script src="https://kit.fontawesome.com/a9545f17e8.js" crossorigin="anonymous"></script>
+    <!-- particles min js  -->
+    <script src="~/assets/home/particles.min.js"></script>
+    <!-- scripts js -->
+    <script src="~/assets/home/jquery.dd.min.js"></script>
+    <!-- jquery.counterup.min js -->
+    <script src="~/assets/home/jquery.counterup.min.js"></script>
+    <!-- scripts js -->
+    <script src="~/assets/home/scripts.js"></script>
+    <script src="~/plugins/TweenMax.min.js"></script>
+
+    <script id="rendered-js">
+        // Create Countdown
+        var Countdown = {
+
+            // Backbone-like structure
+            $el: $('.countdown'),
+
+            // Params
+            countdown_interval: null,
+            total_seconds: 0,
+
+            // Initialize the countdown
+            init: function () {
+
+                // DOM
+                this.$ = {
+                    days: this.$el.find('.bloc-time.days .figure'),
+                    hours: this.$el.find('.bloc-time.hours .figure'),
+                    minutes: this.$el.find('.bloc-time.min .figure'),
+                    seconds: this.$el.find('.bloc-time.sec .figure')
+                };
+
+                var countDownDate = new Date("june 25, 2020 15:37:25").getTime();
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                //  Time calculations for days, hours, minutes and seconds
+                var days_se = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+                var hours_se = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                var minutes_se = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                var seconds_se = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+                // Init countdown values
+                this.values = {
+                    days: days_se,
+                    hours: hours_se,
+                    minutes: minutes_se,
+                    seconds: seconds_se
+                };
+
+
+                // Initialize total seconds
+                this.total_seconds = this.values.hours * 60 * 60 + this.values.minutes * 60 + this.values.seconds;
+
+                // Animate countdown to the end
+                this.count();
+            },
+
+            count: function () {
+
+                var that = this,
+                    $days_1 = this.$.days.eq(0),
+                    $days_2 = this.$.days.eq(1),
+                    $days_3 = this.$.days.eq(2),
+                    $hour_1 = this.$.hours.eq(0),
+                    $hour_2 = this.$.hours.eq(1),
+                    $min_1 = this.$.minutes.eq(0),
+                    $min_2 = this.$.minutes.eq(1),
+                    $sec_1 = this.$.seconds.eq(0),
+                    $sec_2 = this.$.seconds.eq(1);
+
+                console.log(this.$.days)
+
+
+                this.countdown_interval = setInterval(function () {
+
+                    if (that.total_seconds > 0) {
+
+                        --that.values.seconds;
+
+                        if (that.values.minutes >= 0 && that.values.seconds < 0) {
+
+                            that.values.seconds = 59;
+                            --that.values.minutes;
+                        }
+
+                        if (that.values.hours >= 0 && that.values.minutes < 0) {
+
+                            that.values.minutes = 59;
+                            --that.values.hours;
+                        }
+
+
+                        // Update DOM values
+                        //Days
+                        that.checkHour(that.values.days, $days_1, $days_2, $days_3);
+
+                        // Hours
+                        that.checkHour(that.values.hours, $hour_1, $hour_2);
+
+                        // Minutes
+                        that.checkHour(that.values.minutes, $min_1, $min_2);
+
+                        // Seconds
+                        that.checkHour(that.values.seconds, $sec_1, $sec_2);
+
+                        --that.total_seconds;
+                    } else {
+                        clearInterval(that.countdown_interval);
+                    }
+                }, 1000);
+            },
+
+            animateFigure: function ($el, value) {
+
+                var that = this,
+                    $top = $el.find('.top'),
+                    $bottom = $el.find('.bottom'),
+                    $back_top = $el.find('.top-back'),
+                    $back_bottom = $el.find('.bottom-back');
+
+                // Before we begin, change the back value
+                $back_top.find('span').html(value);
+
+                // Also change the back bottom value
+                $back_bottom.find('span').html(value);
+
+                // Then animate
+                TweenMax.to($top, 0.8, {
+                    rotationX: '-180deg',
+                    transformPerspective: 300,
+                    ease: Quart.easeOut,
+                    onComplete: function () {
+
+                        $top.html(value);
+
+                        $bottom.html(value);
+
+                        TweenMax.set($top, { rotationX: 0 });
+                    }
+                });
+
+
+                TweenMax.to($back_top, 0.8, {
+                    rotationX: 0,
+                    transformPerspective: 300,
+                    ease: Quart.easeOut,
+                    clearProps: 'all'
+                });
+
+            },
+
+            checkHour: function (value, $el_1, $el_2, $el_3) {
+
+                var val_1 = value.toString().charAt(0);
+                var val_2 = value.toString().charAt(1);
+
+                if ($el_3 != null)
+                    var val_3 = value.toString().charAt(2);
+
+                var fig_1_value = $el_1.find('.top').html();
+                var fig_2_value = $el_2.find('.top').html();
+
+                if ($el_3 != null)
+                    var fig_3_value = $el_3.find('.top').html();
+
+                if (value >= 10) {
+
+                    // Animate only if the figure has changed
+                    if (fig_1_value !== val_1) this.animateFigure($el_1, val_1);
+                    if (fig_2_value !== val_2) this.animateFigure($el_2, val_2);
+
+                    if ($el_3 != null)
+                        if (fig_3_value !== val_3)
+                            this.animateFigure($el_3, val_3);
+
+                } else {
+
+                    // If we are under 10, replace first figure with 0
+                    if (fig_1_value !== '0') this.animateFigure($el_1, 0);
+                    if (fig_2_value !== val_1) this.animateFigure($el_2, val_1);
+                    if ($el_3 != null)
+                        if (fig_3_value !== val_1) this.animateFigure($el_2, val_1);
+                }
+            }
+        };
+
+
+        // Let's go !
+        Countdown.init();
+        //# sourceURL=pen.js
+    </script>
+    <script>
+
+        // Set the date we're counting down to
+        var countDownDate = new Date("mar 31, 2022 23:59:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            $('.countdown-time-first').html(days);
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            $('.countdown-time-second').html(hours);
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            $('.countdown-time-third').html(minutes);
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            $('.countdown-time-last').html(seconds);
+        }, 1000);
+    </script>
+</body>
+
+<!-- Mirrored from www.gridnet.io/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Jan 2020 09:46:58 GMT -->
+</html>
+
+

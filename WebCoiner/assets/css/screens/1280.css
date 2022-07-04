@@ -1,0 +1,26 @@
+@media screen and (min-width:1280px) and (max-width:1359px){
+
+    .section-text-wrapper p{
+        line-height: 1.75;
+    }
+
+    .section-text-wrapper .section-heading{
+        margin-bottom: 50px;
+    }
+
+    .what-is-wrapper img {
+        max-width: 550px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .section-text-wrapper .buttons-inline {
+        margin-top: 60px;
+    }
+
+    .roadmap-image-wrapper img {
+        height: auto;
+        max-width: 1300px;
+    }
+
+}

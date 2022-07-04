@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebCoiner.GlobalDashboardList>
+
+@{
+    ViewBag.Title = "list";
+}
+
+<style>
+    table tr:nth-child(2) {
+        background-color: #d7bbff;
+    }
+</style>
+
+<section id="home_section" class="section_banner section_gradiant3">
+   
+   
+    <div class="container animation animated fadeInUp">
+        <p>
+            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-white btn-radius create_btn" })
+        </p>
+        <table class="table table-light">
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Raised)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateCreated)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BTCWallet)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Raised)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateCreated)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BTCWallet)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 500;
+    src: url('RobotoMedium.eot');
+    src: url('RobotoMedium.eot') format('embedded-opentype'),
+         url('RobotoMedium.html') format('woff2'),
+         url('RobotoMedium.woff') format('woff'),
+         url('RobotoMedium.ttf') format('truetype'),
+         url('RobotoMedium.svg#RobotoMedium') format('svg');
+}

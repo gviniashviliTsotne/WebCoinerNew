@@ -1,0 +1,73 @@
+/*   
+Author: omgkotofey
+Author URI: https://twitter.com/omgkotofey
+*/
+
+/*Vendor styles*/
+
+@import url("css/vendor/bootstrap/bootstrap.min.css") screen;
+@import url("css/vendor/bootstrap/bootstrap-col-1-5.css") screen;
+@import url("css/vendor/bootstrap/bootstrap-col-1-7.css") screen;
+
+/*Fonts*/
+
+@import url("fonts/HKKontrastBold/styles.css") screen;
+@import url("fonts/RobotoLight/styles.css") screen;
+@import url("fonts/RobotoRegular/styles.css") screen;
+@import url("fonts/RobotoMedium/styles.css") screen;
+@import url("fonts/RobotoBold/styles.css") screen;
+
+/*Main styles*/
+
+@import url("css/main.css") screen;
+
+/*Adaptive*/
+
+@import url("css/screens/mobile.css") screen;
+@import url("css/screens/tablet.css") screen;
+@import url("css/screens/1024.css") screen;
+@import url("css/screens/1280.css") screen;
+@import url("css/screens/1360.css") screen;
+@import url("css/screens/1600.css") screen;
+@import url("css/screens/1920.css") screen;
+
+body {
+    color: #fff;
+}
+
+nav a {
+    font-size: 15px;
+    color: #fff;
+}
+
+.table-light {
+    padding: 15px;
+}
+
+    nav a span::after {
+        content: '';
+        position: absolute;
+        top: 130%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        margin: 0 auto;
+        background-color: #00a74a;
+        opacity: 0;
+        transition: ease 0.3s;
+    }
+
+    nav a span:hover {
+        color: #00a74a;
+    }
+
+#what-is-section, #asis-tobe-section, #ecosystem-section, #technicals-section, #usage-section, #roadmap-section, #team-section {
+    background-color: #2a2d2f;
+}
+
+.particles-js-canvas-el {
+    background: #fafafa;
+    /*background: -moz-linear-gradient(left, #ff0072 0%, #00b4ff 68%, #00d8ff 100%);
+    background: -webkit-linear-gradient(left, #ff0072 0%,#00b4ff 68%,#00d8ff 100%);
+    background: linear-gradient(to right, #ff0072 0%,#00b4ff 68%,#00d8ff 100%);*/
+}

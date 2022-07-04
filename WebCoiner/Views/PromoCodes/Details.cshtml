@@ -1,0 +1,31 @@
+﻿@model WebCoiner.PromoCode
+
+@{
+    ViewBag.Title = "Details";
+}
+
+    <section id="home_section" class="section_banner section_gradiant3">
+       
+       
+        <div class="container animation animated fadeInUp">
+
+            <div>
+                <h4>PromoCode</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Promocode
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PromoCode1)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn-link" }) |
+                @Html.ActionLink("Back to List", "list", null, new { @class = "btn-link" })
+            </p>
+        </div>
+    </section>

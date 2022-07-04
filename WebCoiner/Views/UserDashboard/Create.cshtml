@@ -1,0 +1,201 @@
+﻿@model WebCoiner.Models.Dashboard
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <app-buy-tokens _nghost-c7="">
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="main-content col-lg-8">
+                        <div class="d-lg-none">
+                            <a class="btn btn-danger btn-xl btn-between w-100 mgb-1-5x" data-target="#add-wallet" data-toggle="modal" href="#">Add your wallet address before buy <em class="ti ti-arrow-right"></em></a><div class="gaps-1x mgb-0-5x d-lg-none d-none d-sm-block"></div>
+                        </div>
+						<div class="content-area card">
+                            <div class="card-innr">
+
+                                <div class="token-currency-choose">
+
+                                </div>
+                                <div class="card-head">
+                                    <h4 class="card-title">Set amount of $ or SYSP tokens you would like to purchase</h4>
+                                </div>
+                                <div class="card-text">
+                                    <p>
+                                        To become a part of the ICO project, you need to purchase SYSP token, which will only be possible after the payment is made and approved. In order to participate in our project,
+                                        please indicate the amount of $ you'd like to invest or the amount of SYSP tokenhs you'd like to purchase.
+                                    </p>
+                                </div><div class="token-contribute">
+                                    <div class="token-calc">
+                                        <div class="token-pay-amount">
+                                            <input class="input-bordered input-with-hint ng-pristine ng-valid ng-touched btc-base-amount" name="btc" id="btc-base-amount" type="text" value="0"><div class="token-pay-currency">
+                                                <span class="input-hint input-hint-sap">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="token-received">
+                                            <div class="token-eq-sign">=</div>
+                                        </div>
+                                        <div class="token-pay-amount">
+                                            <input class="input-bordered input-with-hint ng-pristine ng-valid ng-touched" id="token-base-amount" type="text" value="0">
+                                            <div class="token-pay-currency"><a class="link ucap link-light toggle-tigger" href="#">SYSP</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="token-calc-note note note-plane">
+                                    </div>
+                                </div>
+
+                                <div class="card-head">
+                                    <h4 class="card-title">Make a payment</h4>
+                                </div><div class="card-text">
+                                    <p>To get tokens please make a payment. You can send payment directly to our address. Once you have paid, you will receive tokens on your Token Balance. </p>
+                                </div><div class="pay-buttons">
+                                    <div class="pay-button"><a class="btn btn-primary btn-between w-100" data-toggle="modal" data-target="#modaltokens" href="javascript:void(0)">Get Address for Payment <em class="ti ti-wallet"></em></a></div>
+                                </div>
+                                <div class="pay-notes">
+                                    <div class="note note-plane note-light note-md font-italic">
+                                        <em class="fas fa-info-circle"></em>
+                                        <p>
+                                            Tokens will appear in your account after payment has been successfully made and approved by our team.
+                                            <br class="d-none d-lg-block"> Please note that, SYSP tokens will be distributed after the end of ICO Token Sale.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="col-xl-4 col-lg-5 token-calculator card card-full-height">
+                    <div class="token-calculator card card-full-height">
+                        <div class="card-innr">
+                            <div class="card-head">
+								<h4 class="card-title">Profit Calculator</h4>
+                                <p class="card-title-text">Enter amount to calculate profit.</p>
+                            </div>
+                            <div class="token-calc">
+                                <div class="token-pay-amount">
+                                    <input class="input-bordered input-with-hint ng-pristine ng-valid ng-touched" id="btc-base-amount1" type="text" value="0">
+                                    <div class="token-pay-currency">
+                                        <a class="link ucap link-light toggle-tigger" href="javascript:void(0)">$</a>
+                                    </div>
+                                </div>
+                                <div class="token-received">
+                                    <div class="token-eq-sign">=</div>
+                                    <div class="token-received-amount"></div>
+                                </div>
+                                <div class="token-pay-amount">
+                                    <input class="input-bordered input-with-hint ng-untouched ng-pristine ng-valid" disabled="" id="token-base-amount1" type="text" value="0">
+                                    <div class="token-pay-currency">
+                                        <a class="link ucap link-light toggle-tigger" href="javascript:void(0)">$</a>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="token-buy">
+                                <a href="/userdashboard/create/" class="btn btn-primary">Buy Tokens</a>
+                            </div>*@
+                        </div>
+                    </div>
+                </div>
+                    <div class="aside sidebar-right col-lg-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="get-pay-address" style="display: none; opacity: 1;" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-md modal-dialog-centered">
+                <div class="modal-content">
+                    <a aria-label="Close" class="modal-close" data-dismiss="modal" href="#"><em class="ti ti-close"></em></a><div class="popup-body">
+                        <h4 class="popup-title">Payment Address for Deposit</h4><p>Please make deposit amount of <strong>1 $</strong> to our address and receive <!----><strong>327919.2 SYSP</strong> tokens including <!----><strong>bonus 54653.2 SYSP</strong> once we recevied payment. </p><div class="gaps-1x"></div><h6 class="font-bold">Payment to the following Address</h6>
+                        <div class="copy-wrap mgb-0-5x"><span class="copy-feedback"></span><em class="fab fa-bitcoin"></em><!----><input class="copy-address" disabled="" type="text"><!----><button class="copy-trigger copy-clipboard" data-clipboard-text="1AUUQX3UJZBudtbi3zJHoJZjEiTphNLcpq"><em class="ti ti-files"></em></button></div><div class="pdb-2-5x pdt-1-5x"></div><button class="btn btn-primary" data-dismiss="modal" data-target="#pay-confirm" data-toggle="modal">Buy Tokens Now <em class="ti ti-arrow-right mgl-4-5x"></em></button><div class="gaps-3x"></div><div class="note note-plane note-light mgb-1x"><em class="fas fa-info-circle"></em><p>Do not make payment through exchange (Kraken, Bitfinex). You can use MayEtherWallet, MetaMask, Mist wallets etc.</p></div>
+                        <div class="note note-plane note-danger"><em class="fas fa-info-circle"></em><p>In case you send a different amount, number of SYSP tokens will update accordingly.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Create" id="transactionbtn" class="btn btn-success " style="display:none" />
+
+    </app-buy-tokens>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modaltokens" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Purchase Tokens</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Please make your payment to the Address</p>
+                    <div class="input-group mb-3">
+                        <input type="text" id="myInput" class="form-control" value="@ViewBag.BTCWallet" aria-label="Recipient's username" aria-describedby="myTooltip" disabled>
+                        <div class="input-group-append">
+                            @*<button type="button" class="btn btn-default btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" data-copy="@ViewBag.BTCWallet" title="Copy to clipboard">
+                                    <i class="fas fa-copy"></i>
+                                </button>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" value="Add Transaction" onclick="$('#transactionbtn').click()" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}
+
+<script src="~/Scripts/bootstrap.js"></script>
+
+
+@section Scripts {
+
+    <script>
+        $("#btc-base-amount").keyup(function () {
+            $("#token-base-amount").val(($(this).val() * 50).toFixed(2));
+        });
+        $("#btc-base-amount1").keyup(function () {
+            $("#token-base-amount1").val(($(this).val() * 12).toFixed(2));
+		});
+
+
+        function copyToClipBoard(txt) {
+            try {
+                var $temp = $("<input>");
+                $("body").append($temp);
+                $temp.val(txt).select();
+                var retVal = document.execCommand("copy");
+                console.log('Copy to clipboard returns: ' + retVal);
+                $temp.remove();
+            } catch (err) {
+                console.log('Error while copying to clipboard: ' + err);
+            }
+        }
+
+
+        $(document).ready(function () {
+            // Initialize
+            // ---------------------------------------------------------------------
+
+            // Tooltips
+            // Requires Bootstrap 3 for functionality
+            $('.js-tooltip').tooltip();
+
+            // Copy to clipboard
+            // Grab any text in the attribute 'data-copy' and pass it to the
+            // copy function
+            $('.js-copy').click(function () {
+
+                var text = $(this).attr('data-copy');
+                var el = $(this);
+                console.log(text)
+                copyToClipBoard(text, el);
+            });
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

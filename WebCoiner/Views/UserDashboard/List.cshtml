@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebCoiner.Transaction>
+
+@{
+    ViewBag.Title = "list";
+}
+
+
+<app-transactions _nghost-c2="">
+    <div class="page-content">
+        <div class="container">
+            <div class="card content-area">
+                <div class="card-innr">
+                    <div class="card-head">
+                        <h4 class="card-title">User Transactions</h4>
+                    </div><table class="data-table dt-init user-tnx">
+                        <thead>
+                            <tr class="data-item data-head">
+                                <th class="data-col dt-tnxno">Status</th>
+                                <th class="data-col dt-token">Tokens</th>
+                                <th class="data-col dt-amount">$</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!---->
+                            @foreach (var item in Model)
+                            {
+                                <tr class="data-item">
+                                    <td class="data-col dt-tnxno">
+                                        <div class="d-flex align-items-center">
+                                            @{ if (item.Approved == 0)
+                                                {
+                                                    <div class="data-state data-state-pending" data-original-title="Pending" data-placement="bottom" data-toggle="tooltip"></div>
+                                                }
+                                                else if (item.Approved == 1)
+                                                {
+                                                    <div class="data-state data-state-canceled" data-original-title="Canceled" data-placement="bottom" data-toggle="tooltip"></div>
+                                                }
+                                                else if (item.Approved == 2)
+                                                {
+                                                    <div class="data-state data-state-approved" data-original-title="Approved" data-placement="bottom" data-toggle="tooltip"></div>
+                                                }
+                                            }
+
+                                            <div class="fake-class">
+                                                <span class="sub sub-date">@item.DateCreated</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="data-col dt-token"><span class="lead token-amount">@item.Tokens</span><span class="sub sub-symbol">SYSP</span></td>
+                                    <td class="data-col dt-amount"><span class="lead amount-pay">@item.BTC.ToString("0.##")</span></td>
+                                </tr>
+                            
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-transactions>

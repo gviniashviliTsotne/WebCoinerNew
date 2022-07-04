@@ -1,0 +1,771 @@
+﻿@model WebCoiner.Models.Dashboard
+
+
+@{
+    ViewBag.Title = "Dashboard";
+    double raised = ((double)Model.Raised / 85000000) * 100;
+    int totalRaised = Convert.ToInt32(Model.Raised);
+    var mil = Model.Raised / 1000000;
+    string controllerName = Request.CurrentExecutionFilePath;
+}
+
+@{
+    Layout = "";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>CIBHOLDINGS Dashboard </title>
+
+    <link rel="stylesheet" href="~/assets/old/app.css" />
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="~/assets/admin/assets/vendor_components/bootstrap/dist/css/bootstrap.css">
+
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="~/assets/admin/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css">
+
+    <!--amcharts -->
+    <link href="https://www.amcharts.com/lib/3/plugins/export/export.css" rel="stylesheet" type="text/css" />
+
+    <!-- Data Table-->
+    <link rel="stylesheet" type="text/css" href="~/assets/admin/assets/vendor_components/datatable/datatables.min.css" />
+
+    <!-- theme style -->
+    <link rel="stylesheet" href="~/assets/admin/css/horizontal-menu.css">
+    <link rel="stylesheet" href="~/assets/admin/css/style.css">
+
+    <!-- Crypto Admin skins -->
+    <link rel="stylesheet" href="~/assets/admin/css/skin_color.css">
+
+
+</head>
+
+<body class="layout-top-nav dark-skin theme-classic">
+
+    <div class="wrapper">
+        <div class="modal fade show" id="myModal" style="display: none; background-color: rgba(152, 152, 152, 0.8); overflow: hidden" aria-modal="true">
+            <div class="modal-dialog" style=" width: 90%; max-width: 1200px; min-height: 100%;">
+                <div class="modal-content" style="background: rgba(0, 0, 0, 0.5);">
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <section class="lis-bg-light">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-10 text-center">
+                                        <div class="heading pb-4">
+                                            <h2>Choose Your Package</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center"
+                                         style="visibility: visible; animation-name: fadeInUp;">
+                                        <div class="price-table">
+                                            <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light" style="background: #747474;">
+                                                <h5 class="text-uppercase lis-latter-spacing-2">Basic</h5>
+                                                <h1 class="display-4 lis-font-weight-500">1<small>%</small></h1>
+                                                <p class="mb-0">Basic Membership</p>
+                                            </div>
+                                            <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                <ul class="list-unstyled lis-line-height-3">
+                                                    <li style="color: black">SyncSpace-ico tokens in portfolio</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center"
+                                         style="visibility: visible; animation-name: fadeInUp;">
+                                        <div class="price-table" style="color: black">
+                                            <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light"
+                                                 style="background-color:#e6e4e2; color: black">
+                                                <h5 class="text-uppercase lis-latter-spacing-2">Silver</h5>
+                                                <h1 class="display-4 lis-font-weight-500">
+                                                    1<small>%</small>-
+                                                    5<small>%</small>
+                                                </h1>
+                                                <p class="mb-0">Silver Membership</p>
+                                            </div>
+                                            <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                <ul class="list-unstyled lis-line-height-3">
+                                                    <li>SyncSpace-ico tokens in portfolio</li>
+                                                    <li>Minimum portfolio: $100,000</li>
+                                                </ul>
+                                                <a href="/userdashboard/create/" style="background-color: #28c189;"
+                                                   class="btn btn-primary-outline btn-md lis-rounded-circle-50"
+                                                   data-abc="true">Top Up Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center"
+                                         style="visibility: visible; animation-name: fadeInUp;">
+                                        <div class="price-table" style="color: black">
+                                            <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light"
+                                                 style="background-color:#F3AF4C;">
+                                                <h5 class="text-uppercase lis-latter-spacing-2">Gold</h5>
+                                                <h1 class="display-4 lis-font-weight-500">
+                                                    6<small>%</small> -
+                                                    12<small>%</small>
+                                                </h1>
+                                                <p class="mb-0">Gold Membership</p>
+                                            </div>
+                                            <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                <ul class="list-unstyled lis-line-height-3">
+                                                    <li>SyncSpace-ico tokens in portfolio</li>
+                                                    <li>Minimum portfolio: $250,000</li>
+                                                </ul>
+                                                <a href="/userdashboard/create/" style="background-color: #28c189;"
+                                                   class="btn btn-primary-outline btn-md lis-rounded-circle-50"
+                                                   data-abc="true">Top Up Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center"
+                                         style="visibility: visible; animation-name: fadeInUp;">
+                                        <div class="price-table" style="color: black">
+                                            <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light"
+                                                 style="        background-color:#a0b2c6;">
+
+                                                <h5 class="text-uppercase lis-latter-spacing-2">Platinum</h5>
+                                                <h1 class="display-4 lis-font-weight-500">
+                                                    12<small>%</small>-20<small>%</small>
+                                                </h1>
+                                                <p class="mb-0">Platinum Membership</p>
+                                            </div>
+                                            <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                <ul class="list-unstyled lis-line-height-3">
+
+
+                                                    <li>SyncSpace-ico tokens in portfolio</li>
+                                                    <li>Minimum portfolio: $500,000</li>
+
+                                                </ul>
+                                                <a href="/userdashboard/create/" style="background-color: #28c189;"
+                                                   class="btn btn-primary-outline btn-md lis-rounded-circle-50"
+                                                   data-abc="true">Top Up Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="close-modal"
+                                data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="inside-header">
+                <div class="d-flex align-items-center logo-box justify-content-between">
+                    <a href="@Url.Action("Dashboard", "UserDashboard")"class="navbar-brand">
+                        <div class="logo-lg">
+                            <span > CIBHOLDINGS</span>
+                        </div>
+                    </a>
+
+
+                    @*  <a class="navbar-brand" href="index.html">
+            <span>
+               CIBHOLDINGS
+            </span>
+        </a>*@
+                </div>
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top">
+                    <!-- Sidebar toggle button-->
+                    <div>
+
+
+                    </div>
+
+                    <div class="navbar-custom-menu r-side">
+                        <ul class="nav navbar-nav">
+                            <li class="d-flex align-items-center">
+                                @if (Request.IsAuthenticated)
+                                {
+                                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <a style="width: 84px" class="d-flex" href="javascript:document.getElementById('logoutForm').submit()">
+                                            <i class="fa fa-cog fa-spin"></i>
+                                            <div>Log Out</div>
+                                        </a>
+                                    }
+                                }
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <nav class="main-nav" role="navigation">
+
+            <!-- Mobile menu toggle button (hamburger/x icon) -->
+            <input id="main-menu-state" type="checkbox" />
+            <label class="main-menu-btn" for="main-menu-state">
+                <span class="main-menu-btn-icon"></span> Toggle main menu visibility
+            </label>
+
+            <!-- Sample menu definition -->
+            <ul id="main-menu" class="sm sm-blue d-flex justify-content-around">
+                @if (User.IsInRole("administrator"))
+                {
+                    <li>
+                        <a href="~/dashboard/list/">
+                            <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/transactions/list">
+                            <i class="icon-Equalizer"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>Transactions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/users/list"><i class="icon-Group"><span class="path1"></span><span class="path2"></span></i>Users</a>
+                    </li>
+                    <li>
+                        <a href="~/promocodes/list"><i class="icon-Arrows-h"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>Promocodes</a>
+                    </li>
+                    <li>
+                        <a href="~/manage/index/"><i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>Profile</a>
+                    </li>
+                    <li>
+                        <a href="~/userdashboard/create/">
+                            <i class="icon-Dollar">
+                                <span class="path1"></span>
+                                <span class="path2"></span><span class="path3"></span><span class="path4"></span>
+                            </i>Buy Tokens
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="modalShow"><i class="icon-Box"><span class="path1"></span><span class="path2"></span></i>Packages</a>
+                    </li>
+                }
+
+                else if (Request.IsAuthenticated)
+                {
+                    <li>
+                        <a href="~/userdashboard/dashboard/">
+                            <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/userdashboard/list/"><i class="icon-Equalizer"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>Transactions</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-Chart-pie"><span class="path1"></span><span class="path2"></span></i>ICO</a>
+                    </li>
+                    <li><a href="currency_exchange.html"><i class="icon-Repeat"><span class="path1"></span><span class="path2"></span></i>Currency</a></li>
+                    <li>
+                        <a href="~/users/list"><i class="icon-Group"><span class="path1"></span><span class="path2"></span></i>Users</a>
+                    </li>
+                    <li>
+                        <a href="~/promocodes/list"><i class="icon-Arrows-h"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>Promocodes</a>
+                    </li>
+                    <li>
+                        <a href="~/manage/index/"><i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>Profile</a>
+                    </li>
+                    <li>
+                        <a href="~/userdashboard/create/"><i class="icon-Flower"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>Buy Tokens</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-Bucket"><span class="path1"></span><span class="path2"></span></i>UI</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <div class="container-full">
+                <!-- Content Header (Page header) -->
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="box">
+                                <div class="box-body">
+                                    <div class="row justify-content-between">
+
+
+                                        <div class="col-xxxl-12 col-xl-12 col-12">
+                                            <div class="row">
+                                                <div class="col-md-3 col-12">
+                                                    <div class="box bg-warning bg-brick-dark rounded30 mb-md-30 mt-30 mb-0">
+                                                        <div class="box-body">
+                                                            <div>
+                                                                <h4 class="text-white">TOTAL INVESTMENT</h4>
+                                                            </div>
+                                                            <div class="mt-5">
+                                                                <h3 class="font-weight-700 text-white">$@Model.InvestmentAmount.ToString("#,##0")</h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-12">
+                                                    <div class="box bg-primary bg-brick-dark rounded30 mb-md-30 mt-30 mb-0">
+                                                        <div class="box-body">
+                                                            <div>
+                                                                <h4 class="text-white">
+                                                                    CURRENT BALANCE
+                                                                </h4>
+                                                            </div>
+                                                            <div class="mt-5">
+                                                                <h3 class="font-weight-700 text-white">$@Model.CurrentBalance.ToString("#,##0")</h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-12">
+                                                    <div class="box bg-info bg-brick-dark rounded30 mb-md-30 mt-30 mb-0">
+                                                        <div class="box-body">
+                                                            <div>
+                                                                <h4 class="text-white">
+                                                                    TOTAL PROFIT
+                                                                </h4>
+                                                            </div>
+                                                            <div class="mt-5">
+                                                                <h3 class="font-weight-700 text-white">$@((Model.CurrentBalance - Model.InvestmentAmount).ToString("#,##0"))</h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-12">
+                                                    <div class="box bg-danger bg-brick-dark rounded30 mb-md-30 mt-30 mb-0">
+                                                        <div class="box-body">
+                                                            <div>
+                                                                <h4 class="text-white">
+                                                                    TOKEN AMOUNT
+                                                                </h4>
+                                                            </div>
+                                                            <div class="mt-5">
+                                                                <h3 class="font-weight-700 text-white">@Model.Tokens</h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxxl-9 col-xl-8 col-12">
+                            <div class="box no-shadow">
+                                <div class="box-body" style="padding: 0">
+                                    <canvas id="line-chart" width="600" height="250"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxxl-3 col-xl-4">
+                            <div class="box" style="height: 250px;">
+                                <div class="box-body d-flex p-25">
+                                    <div class="token-calculator card card-full-height" style="width: 100%">
+                                        <div class="card-innr border-0" style="border: none !important">
+                                            <div class="card-head">
+                                                <h4 class="card-title text-center">Profit Calculator</h4>
+                                                <p class="card-title-text text-center">Enter amount to calculate profit.</p>
+                                            </div>
+                                            <div class="token-calc d-flex justify-content-center">
+                                                <div class="token-pay-amount d-flex">
+                                                    <input class="input-bordered w-100 input-with-hint ng-pristine ng-valid ng-touched" id="btc-base-amount1"
+                                                           type="text" value="0" style="border-radius: 10px; padding-left: 5px;">
+                                                    <div class="token-pay-currency" style=" display: flex; align-items: center; margin: 0 2px;">
+                                                        <a class="link ucap link-light toggle-tigger" href="javascript:void(0)">$</a>
+                                                    </div>
+                                                </div>
+                                                <div class="token-received mr-5 ml-5">
+                                                    <div class="token-eq-sign">=</div>
+                                                    <div class="token-received-amount"></div>
+                                                </div>
+                                                <div class="token-pay-amount d-flex">
+                                                    <input class="input-bordered w-100 input-with-hint ng-untouched ng-pristine ng-valid"
+                                                           disabled="" id="token-base-amount1" type="text" value="0"
+                                                           style="border-radius: 10px; padding-left: 5px; color: #fff">
+                                                    <div class="token-pay-currency" style=" display: flex; align-items: center; margin: 0 2px;">
+                                                        <a class="link ucap link-light toggle-tigger" href="javascript:void(0)">$</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="col-12">
+                            <div class="box">
+                                <div class="box-body">
+                                    <ul id="webticker-3" class="d-flex">
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                </section>
+                <!-- /.content -->
+            </div>
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer d-flex justify-content-center">
+            
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar">
+
+            <div class="rpanel-title"><span class="pull-right btn btn-circle btn-danger"><i class="ion ion-close text-white" data-toggle="control-sidebar"></i></span> </div>  <!-- Create the tabs -->
+            <ul class="nav nav-tabs control-sidebar-tabs">
+                <li class="nav-item"><a href="#control-sidebar-home-tab" data-toggle="tab">Chat</a></li>
+                <li class="nav-item"><a href="#control-sidebar-settings-tab" data-toggle="tab">Todo</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane" id="control-sidebar-home-tab">
+                    <div class="flexbox">
+                        <a href="javascript:void(0)" class="text-grey">
+                            <i class="ti-more"></i>
+                        </a>
+                        <p>Users</p>
+                        <a href="javascript:void(0)" class="text-right text-grey"><i class="ti-plus"></i></a>
+                    </div>
+                    <div class="lookup lookup-sm lookup-right d-none d-lg-block">
+                        <input type="text" name="s" placeholder="Search" class="w-p100">
+                    </div>
+                    <div class="media-list media-list-hover mt-20">
+                        <div class="media py-10 px-0">
+                            <a class="avatar avatar-lg status-success" href="#">
+                                <img src="~/assets/admin/images/avatar/1.jpg" alt="...">
+                            </a>
+                            <div class="media-body">
+                                <p class="font-size-16">
+                                    <a class="hover-primary" href="#"><strong>Tyler</strong></a>
+                                </p>
+                                <p>Praesent tristique diam...</p>
+                                <span>Just now</span>
+                            </div>
+                        </div>
+
+                        <div class="media py-10 px-0">
+                            <a class="avatar avatar-lg status-danger" href="#">
+                                <img src="~/assets/admin/images/avatar/2.jpg" alt="...">
+                            </a>
+                            <div class="media-body">
+                                <p class="font-size-16">
+                                    <a class="hover-primary" href="#"><strong>Luke</strong></a>
+                                </p>
+                                <p>Cras tempor diam ...</p>
+                                <span>33 min ago</span>
+                            </div>
+                        </div>
+
+                        <div class="media py-10 px-0">
+                            <a class="avatar avatar-lg status-warning" href="#">
+                                <img src="~/assets/admin/images/avatar/3.jpg" alt="...">
+                            </a>
+                            <div class="media-body">
+                                <p class="font-size-16">
+                                    <a class="hover-primary" href="#"><strong>Evan</strong></a>
+                                </p>
+                                <p>In posuere tortor vel...</p>
+                                <span>42 min ago</span>
+                            </div>
+                        </div>
+
+                        <div class="media py-10 px-0">
+                            <a class="avatar avatar-lg status-primary" href="#">
+                                <img src="~/assets/admin/images/avatar/4.jpg" alt="...">
+                            </a>
+                            <div class="media-body">
+                                <p class="font-size-16">
+                                    <a class="hover-primary" href="#"><strong>Evan</strong></a>
+                                </p>
+                                <p>In posuere tortor vel...</p>
+                                <span>42 min ago</span>
+                            </div>
+                        </div>
+
+                        <div class="media py-10 px-0">
+                            <a class="avatar avatar-lg status-success" href="#">
+                                <img src="~/assets/admin/images/avatar/1.jpg" alt="...">
+                            </a>
+                            <div class="media-body">
+                                <p class="font-size-16">
+                                    <a class="hover-primary" href="#"><strong>Tyler</strong></a>
+                                </p>
+                                <p>Praesent tristique diam...</p>
+                                <span>Just now</span>
+                            </div>
+                        </div>
+
+                        <div class="media py-10 px-0">
+                            <a class="avatar avatar-lg status-danger" href="#">
+                                <img src="~/assets/admin/images/avatar/2.jpg" alt="...">
+                            </a>
+                            <div class="media-body">
+                                <p class="font-size-16">
+                                    <a class="hover-primary" href="#"><strong>Luke</strong></a>
+                                </p>
+                                <p>Cras tempor diam ...</p>
+                                <span>33 min ago</span>
+                            </div>
+                        </div>
+
+                        <div class="media py-10 px-0">
+                            <a class="avatar avatar-lg status-warning" href="#">
+                                <img src="~/assets/admin/images/avatar/3.jpg" alt="...">
+                            </a>
+                            <div class="media-body">
+                                <p class="font-size-16">
+                                    <a class="hover-primary" href="#"><strong>Evan</strong></a>
+                                </p>
+                                <p>In posuere tortor vel...</p>
+                                <span>42 min ago</span>
+                            </div>
+                        </div>
+
+                        <div class="media py-10 px-0">
+                            <a class="avatar avatar-lg status-primary" href="#">
+                                <img src="~/assets/admin/images/avatar/4.jpg" alt="...">
+                            </a>
+                            <div class="media-body">
+                                <p class="font-size-16">
+                                    <a class="hover-primary" href="#"><strong>Evan</strong></a>
+                                </p>
+                                <p>In posuere tortor vel...</p>
+                                <span>42 min ago</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <div class="flexbox">
+                        <a href="javascript:void(0)" class="text-grey">
+                            <i class="ti-more"></i>
+                        </a>
+                        <p>Todo List</p>
+                        <a href="javascript:void(0)" class="text-right text-grey"><i class="ti-plus"></i></a>
+                    </div>
+                    <ul class="todo-list mt-20">
+                        <li class="py-15 px-5 by-1">
+                            <!-- checkbox -->
+                            <input type="checkbox" id="basic_checkbox_1" class="filled-in">
+                            <label for="basic_checkbox_1" class="mb-0 h-15"></label>
+                            <!-- todo text -->
+                            <span class="text-line">Nulla vitae purus</span>
+                            <!-- Emphasis label -->
+                            <small class="badge bg-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+                            <!-- General tools such as edit or delete-->
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li class="py-15 px-5">
+                            <!-- checkbox -->
+                            <input type="checkbox" id="basic_checkbox_2" class="filled-in">
+                            <label for="basic_checkbox_2" class="mb-0 h-15"></label>
+                            <span class="text-line">Phasellus interdum</span>
+                            <small class="badge bg-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li class="py-15 px-5 by-1">
+                            <!-- checkbox -->
+                            <input type="checkbox" id="basic_checkbox_3" class="filled-in">
+                            <label for="basic_checkbox_3" class="mb-0 h-15"></label>
+                            <span class="text-line">Quisque sodales</span>
+                            <small class="badge bg-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li class="py-15 px-5">
+                            <!-- checkbox -->
+                            <input type="checkbox" id="basic_checkbox_4" class="filled-in">
+                            <label for="basic_checkbox_4" class="mb-0 h-15"></label>
+                            <span class="text-line">Proin nec mi porta</span>
+                            <small class="badge bg-success"><i class="fa fa-clock-o"></i> 3 days</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li class="py-15 px-5 by-1">
+                            <!-- checkbox -->
+                            <input type="checkbox" id="basic_checkbox_5" class="filled-in">
+                            <label for="basic_checkbox_5" class="mb-0 h-15"></label>
+                            <span class="text-line">Maecenas scelerisque</span>
+                            <small class="badge bg-primary"><i class="fa fa-clock-o"></i> 1 week</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li class="py-15 px-5">
+                            <!-- checkbox -->
+                            <input type="checkbox" id="basic_checkbox_6" class="filled-in">
+                            <label for="basic_checkbox_6" class="mb-0 h-15"></label>
+                            <span class="text-line">Vivamus nec orci</span>
+                            <small class="badge bg-info"><i class="fa fa-clock-o"></i> 1 month</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li class="py-15 px-5 by-1">
+                            <!-- checkbox -->
+                            <input type="checkbox" id="basic_checkbox_7" class="filled-in">
+                            <label for="basic_checkbox_7" class="mb-0 h-15"></label>
+                            <!-- todo text -->
+                            <span class="text-line">Nulla vitae purus</span>
+                            <!-- Emphasis label -->
+                            <small class="badge bg-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+                            <!-- General tools such as edit or delete-->
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li class="py-15 px-5">
+                            <!-- checkbox -->
+                            <input type="checkbox" id="basic_checkbox_8" class="filled-in">
+                            <label for="basic_checkbox_8" class="mb-0 h-15"></label>
+                            <span class="text-line">Phasellus interdum</span>
+                            <small class="badge bg-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li class="py-15 px-5 by-1">
+                            <!-- checkbox -->
+                            <input type="checkbox" id="basic_checkbox_9" class="filled-in">
+                            <label for="basic_checkbox_9" class="mb-0 h-15"></label>
+                            <span class="text-line">Quisque sodales</span>
+                            <small class="badge bg-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                        <li class="py-15 px-5">
+                            <!-- checkbox -->
+                            <input type="checkbox" id="basic_checkbox_10" class="filled-in">
+                            <label for="basic_checkbox_10" class="mb-0 h-15"></label>
+                            <span class="text-line">Proin nec mi porta</span>
+                            <small class="badge bg-success"><i class="fa fa-clock-o"></i> 3 days</small>
+                            <div class="tools">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+
+    </div>
+    <!-- END CONTAINER -->
+    <script src="~/assets/home/js/jquery-3.6.0.min.js"></script>
+
+    <!-- js -->
+    <script src="~/assets/admin/js/vendors.min.js"></script>
+
+    <!--Vendor -->
+    <script src="~/assets/admin/assets/vendor_components/apexcharts-bundle/dist/apexcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="~/assets/admin/assets/vendor_components/Web-Ticker-master/jquery.webticker.min.js"></script>
+    <script src="~/assets/admin/assets/vendor_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript"
+            src="http://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <script type="text/javascript"
+            src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <!-- Crypto Admin App -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="~/assets/admin/js/jquery.smartmenus.js"></script>
+    <script src="~/assets/admin/js/menus.js"></script>
+    <script src="~/assets/admin/js/template.js"></script>
+    <script src="~/assets/admin/js/dashboard.js"></script>
+    <script src="~/assets/admin/js/demo.js"></script>
+    <script src="~/assets/js/data.js"></script>
+
+    <!-- END CORE TEMPLATE JS - END -->
+    @section Scripts {
+        <script>
+            var milion =@mil;
+
+            document.getElementById("packages-area").addEventListener("click", function () {
+                document.getElementById("myModal").style.display = "flex";
+            });
+
+            document.getElementById("close-modal").addEventListener("click", function () {
+                document.getElementById("myModal").style.display = "none";
+            });
+
+            $(".footer-bar").hide();
+
+            document.addEventListener("DOMContentLoaded", function (event) {
+                $("#backbutton").hide();
+            });
+        </script>
+    }
+
+    <script>
+        $("#close-modal").on('click', function () {
+            $("#myModal").hide();
+        })
+        $("#modalShow").on('click', function () {
+            $("#myModal").show();
+        })
+
+        $("#btc-base-amount").keyup(function () {
+            $("#token-base-amount").val(($(this).val() * 50).toFixed(2));
+        });
+        $("#btc-base-amount1").keyup(function () {
+            $("#token-base-amount1").val(($(this).val() * 6).toFixed(2));
+        });
+
+
+    </script>
+</body>
+
+</html>
+
